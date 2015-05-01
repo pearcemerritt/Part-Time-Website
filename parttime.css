@@ -1,7 +1,16 @@
 body {
-	background-color: #98E5E5;
+	background-color: #E6F5FA;
 }
 
 #header {
 	background-color: #6AA0A0;
+	text-align: center;
+	border-radius: 500px;
+	text-align: center;
+
+}
+
+#materials {
+	width:200px; 
+	background-color: #E69D85;
 }
