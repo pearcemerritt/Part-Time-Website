@@ -16,7 +16,8 @@ a:visited {
 }
 
 h4 {
-	margin-bottom: .25em;
+	margin: .25em auto;
+	/*font-size: 18px;*/
 }
 
 ul {
