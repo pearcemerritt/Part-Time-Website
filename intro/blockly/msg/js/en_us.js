@@ -177,11 +177,11 @@ Blockly.Msg.LOGIC_NULL = 'null';
 Blockly.Msg.LOGIC_NULL_TOOLTIP = 'Returns null.';
 
 Blockly.Msg.LOGIC_TERNARY_HELPURL = 'http://en.wikipedia.org/wiki/%3F:';
-Blockly.Msg.LOGIC_TERNARY_CONDITION = 'test';
+Blockly.Msg.LOGIC_TERNARY_CONDITION = 'condition';
 Blockly.Msg.LOGIC_TERNARY_IF_TRUE = 'if true';
-Blockly.Msg.LOGIC_TERNARY_IF_FALSE = 'if false';
-Blockly.Msg.LOGIC_TERNARY_TOOLTIP = 'Check the condition in "test". If the condition is true\n' +
-    'returns the "if true" value, otherwise returns the "if false" value.';
+Blockly.Msg.LOGIC_TERNARY_IF_FALSE = 'else';
+Blockly.Msg.LOGIC_TERNARY_TOOLTIP = 'Check the condition in "condition". If the condition is true\n' +
+    'returns the "if true" value, otherwise returns the "else" value.';
 
 // Math Blocks.
 Blockly.Msg.MATH_NUMBER_HELPURL = 'http://en.wikipedia.org/wiki/Number';

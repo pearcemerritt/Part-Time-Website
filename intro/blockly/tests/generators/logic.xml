@@ -90,7 +90,7 @@
         </value>
         <statement name="DO0">
           <block type="unittest_fail">
-            <field name="MESSAGE">if false</field>
+            <field name="MESSAGE">else</field>
           </block>
         </statement>
         <next>
