@@ -1,6 +1,18 @@
 body {
 	/*background-color: #E6F5FA;*/
 	font-family: arial;
+	background-color: #faf8f5;
+	color: #222;
+}
+
+a {
+	text-decoration: none;
+	color: #eb462a;
+}
+
+a:visited {
+	text-decoration: none;
+	color: #ac4142;
 }
 
 #header {
@@ -15,8 +27,19 @@ body {
 }
 
 header {
-	color: #ff0000;
+	color: #eb462a;
 	text-align: center;
+	border-bottom: 2px solid #222;
+}
+
+header h1 {
+	vertical-align: middle;
+}
+
+header img {
+	vertical-align: middle;
+	padding-right: .5em;
+	display: inline-block;
 }
 
 #page-container {
@@ -28,4 +51,18 @@ header {
 	max-width: 30em;
 	margin: 0 auto;
 	/*text-align: center;*/
+}
+
+.monday {
+	display: inline-block;
+	float: left;
+	/*padding-right: 2em;*/
+	/*vertical-align: top;*/
+} 
+
+.wednesday {
+	display: inline-block;
+	float: right;
+	/*padding-left: 2em;*/
+	/*vertical-align: top;*/
 }
