@@ -1,8 +1,8 @@
 body {
 	/*background-color: #E6F5FA;*/
 	font-family: arial;
-	background-color: #faf8f5;
-	color: #222;
+	background-color: #fff;
+	color: #333;
 }
 
 a {
@@ -15,7 +15,15 @@ a:visited {
 	color: #ac4142;
 }
 
-#header {
+h4 {
+	margin-bottom: .25em;
+}
+
+ul {
+	margin-top: .25em;
+}
+
+/*#header {
 	background-color: #6AA0A0;
 	text-align: center;
 	border-radius: 500px;
@@ -24,12 +32,14 @@ a:visited {
 #materials {
 	width:200px; 
 	background-color: #E69D85;
-}
+}*/
 
 header {
 	color: #eb462a;
 	text-align: center;
-	border-bottom: 2px solid #222;
+	border-bottom: 2px solid #ddd;
+	margin: 0 auto;
+	max-width: 40em;
 }
 
 header h1 {
@@ -51,6 +61,10 @@ header img {
 	max-width: 30em;
 	margin: 0 auto;
 	/*text-align: center;*/
+}
+
+.centered {
+	text-align: center;
 }
 
 .monday {
