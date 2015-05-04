@@ -1,16 +1,31 @@
 body {
-	background-color: #E6F5FA;
+	/*background-color: #E6F5FA;*/
+	font-family: arial;
 }
 
 #header {
 	background-color: #6AA0A0;
 	text-align: center;
 	border-radius: 500px;
-	text-align: center;
-
 }
 
 #materials {
 	width:200px; 
 	background-color: #E69D85;
+}
+
+header {
+	color: #ff0000;
+	text-align: center;
+}
+
+#page-container {
+	max-width: 40em;
+	margin: 0 auto;
+}
+
+.content {
+	max-width: 30em;
+	margin: 0 auto;
+	/*text-align: center;*/
 }
