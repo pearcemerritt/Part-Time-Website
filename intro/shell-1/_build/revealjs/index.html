@@ -1,0 +1,307 @@
+
+
+
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <!--<title>Introduction to the Command Line &mdash; Hackbright Fellowship</title>-->
+  <title>Introduction to the Command Line</title>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+  <link rel="stylesheet" href="_static/revealjs/css/reveal.css"/>
+  <link rel="stylesheet" href="_static/revealjs/css/theme/white.css" id="theme"/>
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/hackbright.css"/>
+
+</head>
+<body>
+<div class="reveal">
+  <footer id="slide-footer">
+  </footer>
+
+  <div class="slides">
+    <section>
+      <h2>Introduction to the Command Line</h2>
+      <div class="event"></div>
+    </section>
+
+    
+  <section id="the-terminal">
+<section>
+<h2>The Terminal</h2>
+</section><section id="the-terminal-a-k-a">
+<h3>The Terminal...A.K.A.</h3>
+<ul class="simple">
+<li>The Shell</li>
+<li>The Command Line</li>
+<li>Console</li>
+<li>A way to talk to your computer</li>
+<li class="fragment"><span>Your portal to the file system</span></li>
+</ul>
+</section><section id="opening-the-terminal">
+<h3>Opening the Terminal</h3>
+<ul class="simple">
+<li>Mac<ul>
+<li>Command-Space to open spotlight, type <cite>term</cite></li>
+<li>Finder → Applications → Utilities → Terminal</li>
+<li>Pin it to the dock</li>
+</ul>
+</li>
+<li>Linux<ul>
+<li>Click on icon in upper left, type <cite>term</cite></li>
+<li>Find it on the launchbar on the lab machines</li>
+</ul>
+</li>
+</ul>
+</section><section id="okay-it-s-open-now-what">
+<h3>Okay, It&#8217;s Open. Now What?</h3>
+<ul class="simple">
+<li>Inside the terminal, you&#8217;ll be running a &#8220;shell&#8221;<ul>
+<li>The shell is a special type of program</li>
+<li>Allows you to talk directly to the file system</li>
+<li>The default shell is called &#8220;bash&#8221;</li>
+<li>It&#8217;s waiting for you to type at the &#8220;prompt&#8221;</li>
+</ul>
+</li>
+</ul>
+</section><section id="the-prompt">
+<h3>The Prompt</h3>
+<ul class="simple">
+<li>Lots of information in the prompt</li>
+<li>It&#8217;s waiting for you to give it a job to do</li>
+<li>Every command is a program</li>
+<li>Most commands:<ul>
+<li>Have a mnemonic of some sort</li>
+<li>Are two or three letters long</li>
+<li>Take arguments, many similar to other commands</li>
+</ul>
+</li>
+</ul>
+</section><section id="example-where-am-i">
+<h3>Example: Where am I?</h3>
+<ul class="simple">
+<li>It&#8217;s very handy to know where you are</li>
+<li>Print Working Directory</li>
+</ul>
+<pre class="console literal-block">
+$ <span class="cmd">pwd</span>
+/Users/rachel
+</pre>
+</section><section id="id4">
+<h3>Example: Where am I?</h3>
+<p>Wait. That was gibberish. What on earth does <cite>/Users/rachel</cite> mean?</p>
+</section></section><section id="the-file-system">
+<section>
+<h2>The File System</h2>
+</section><section id="id1">
+<h3>The File System</h3>
+<ul class="simple">
+<li>Visualize it as an upside down tree</li>
+<li class="fragment"><span>It has a root</span></li>
+<li class="fragment"><span>And branches</span></li>
+<li class="fragment"><span>And leaves</span></li>
+</ul>
+</section><section id="exploring-the-file-system">
+<h3>Exploring the File System</h3>
+<ul class="simple">
+<li>Where was I?</li>
+<li class="fragment"><span>pwd</span></li>
+</ul>
+</section></section><section id="ls-list-files-in-a-directory">
+<section>
+<h2>ls: List Files in a Directory</h2>
+</section><section id="ls">
+<h3>ls</h3>
+<p>List files in a directory</p>
+<pre class="console literal-block">
+$ <span class="cmd">ls</span>
+Desktop/     Documents/      Downloads/
+Pictures/    part-time/      notes.txt
+</pre>
+</section><section id="ls-a">
+<h3>ls -a</h3>
+<p>List all files in a directory, including hidden files</p>
+<pre class="console literal-block">
+$ <span class="cmd">ls - a</span>
+./           Desktop/     Documents/      Downloads/
+../          Pictures/    part-time/      notes.txt
+.bashrc      .vimrc
+</pre>
+</section><section id="ls-l">
+<h3>ls -l</h3>
+<pre class="console literal-block">
+$ <span class="cmd">ls -l</span>
+-rw-r--r--   1 rachel  staff  142 Oct 27 22:13 notes.txt
+-rw-r--r--   1 rachel  staff  142 Oct 28 22:15 Desktop/
+drwxr-xr-x  15 rachel  staff  510 Oct 30 12:13 part-time/
+etc.
+</pre>
+</section><section id="ls-al">
+<h3>ls -al</h3>
+<pre class="console literal-block">
+$ <span class="cmd">ls -al</span>
+-rw-r--r--   1 rachel  staff  142 Oct 27 20:13 .bashrc
+-rw-r--r--   1 rachel  staff  142 Oct 27 22:13 notes.txt
+drwx------   1 rachel  staff  142 Oct 28 22:15 Desktop/
+drwxr-xr-x   6 rachel  staff  510 Oct 30 12:13 part-time/
+</pre>
+<p>You can also do them separately, as in &#8216;ls -a -l&#8217;</p>
+</section></section><section id="cd-change-directory">
+<section>
+<h2>cd: Change Directory</h2>
+</section><section id="id2">
+<h3>cd: Change Directory</h3>
+<p>Used to change into a new working directory</p>
+<pre class="console literal-block">
+$ <span class="cmd">pwd</span>
+/Users/rachel
+$ <span class="cmd">cd part-time</span>
+$ <span class="cmd">pwd</span>
+/Users/rachel/part-time
+</pre>
+</section></section><section id="move-and-copy">
+<section>
+<h2>Move and Copy</h2>
+</section><section id="mv-move-and-rename">
+<h3>mv: Move and Rename</h3>
+<pre class="console literal-block">
+$ <span class="cmd">ls</span>
+file          file1        file2       file3
+
+$ <span class="cmd">mv file file.txt</span>
+
+$ <span class="cmd">ls</span>
+file.txt      file1        file2       file3
+</pre>
+</section><section id="cp-copy">
+<h3>cp: Copy</h3>
+<pre class="console literal-block">
+$ <span class="cmd">ls</span>
+file       file1          file2        file3
+
+$ <span class="cmd">cp file file.txt</span>
+
+$ <span class="cmd">ls</span>
+file       file.txt       file1        file2       file3
+</pre>
+</section></section><section id="tab-complete-all-the-things">
+<section>
+<h2>Tab Complete All the Things!!</h2>
+</section></section><section id="rm-remove-file-s">
+<section>
+<h2>rm: Remove File(s)</h2>
+</section><section id="id3">
+<h3>rm: Remove File(s)</h3>
+<pre class="console literal-block">
+$ <span class="cmd">ls</span>
+file       file.txt       file1        file2       file3
+
+$ <span class="cmd">rm file.txt</span>
+file       file1        file2       file3
+</pre>
+</section></section><section id="making-and-removing-directories">
+<section>
+<h2>Making and Removing Directories</h2>
+</section><section id="mkdir-make-directory">
+<h3>mkdir: Make Directory</h3>
+<pre class="console literal-block">
+$ <span class="cmd">mkdir ubermelon</span>
+</pre>
+</section><section id="rmdir-remove-directory">
+<h3>rmdir: Remove Directory</h3>
+<pre class="console literal-block">
+$ <span class="cmd">rmdir ubermelon</span>
+</pre>
+</section></section><section id="things-the-shell-knows">
+<section>
+<h2>Things the Shell Knows</h2>
+</section><section id="if-you-re-lost-you-can-always-go-home">
+<h3>If You&#8217;re Lost, You Can Always Go $HOME</h3>
+<p>Where home is is one of the many things that the shell knows.</p>
+<pre class="console literal-block">
+$ <span class="cmd">cd</span>
+$ <span class="cmd">cd /Users/rachel</span>
+$ <span class="cmd">cd $HOME</span>
+</pre>
+</section><section id="and-introducing-the">
+<h3>And Introducing...the ~</h3>
+<p>The tilde (<code class="docutils literal"><span class="pre">~</span></code>) is another way the shell refers to <cite>$HOME</cite></p>
+<pre class="console literal-block">
+$ <span class="cmd">cd ~</span>
+$ <span class="cmd">cd ~/</span>
+</pre>
+</section><section id="the-environment">
+<h3>The Environment</h3>
+<pre class="console literal-block">
+$ <span class="cmd">env</span>
+SHELL=/bin/bash
+USER=rachel
+HOME=/Users/rachel
+PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+etc.
+</pre>
+</section><section id="the-shell-knows-what-you-ve-done">
+<h3>The Shell Knows What You&#8217;ve Done</h3>
+<pre class="console literal-block">
+$ <span class="cmd">history</span>
+534  ls
+535  ls bob
+536  ls sally
+537  ls ubermelon
+538  history
+$
+</pre>
+</section><section id="use-arrow-keys-to-traverse-history">
+<h3>Use Arrow Keys to Traverse History</h3>
+<p>Or: How to type even less</p>
+<ul class="simple">
+<li>Up arrow goes backwards through history list</li>
+<li>Down arrow goes forwards until it hits most recent</li>
+</ul>
+</section></section><section id="three-special-commands">
+<section>
+<h2>Three Special Commands</h2>
+</section><section id="make-it-stahp">
+<h3>Make it Stahp</h3>
+<ul class="simple">
+<li><cite>&lt;Ctrl-C&gt;</cite> is called a &#8220;Keyboard Interrupt&#8221;</li>
+<li>This stops a runaway process (i.e. an infinite loop)</li>
+</ul>
+</section><section id="get-me-out-of-here">
+<h3>Get Me Out of Here</h3>
+<ul class="simple">
+<li><cite>&lt;Ctrl-D&gt;</cite> is &#8220;Exit&#8221;</li>
+<li>This will exit a shell, including python shells</li>
+</ul>
+</section><section id="suspend-me">
+<h3>Suspend Me</h3>
+<ul class="simple">
+<li><cite>&lt;Ctrl-Z&gt;</cite> is &#8220;Suspend&#8221;</li>
+<li>Just. No. For now.</li>
+</ul>
+</section></section>
+
+
+  </div>
+</div>
+
+<script src="_static/revealjs/lib/js/head.min.js"></script>
+<script src="_static/revealjs/js/reveal.js"></script>
+<script>
+  Reveal.initialize({
+    maxScale: 5,
+    width: 1280,
+    height: 800,
+    dependencies: [
+          { src: "_static/revealjs/plugin/zoom-js/zoom.js", async: true },
+          { src: "_static/revealjs/plugin/notes/notes.js", async: true },
+    ]
+  });
+</script>
+
+</body>
+</html>
