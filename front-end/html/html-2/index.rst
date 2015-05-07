@@ -1,0 +1,297 @@
+.. highlight:: html
+
+========================
+HTML 2: Tables and Forms
+========================
+
+Tables
+======
+
+Table definition
+----------------
+
+A table is a way to display information in rows and columns
+
+.. newslide::
+
+In HTML a table is defined by the ``<table>`` element
+
+.. code-block:: html
+
+  <table>
+    ...
+  </table>
+
+Tables have rows
+----------------
+
+Rows of a table are defined by the ``<tr>`` element
+
+.. code-block:: html
+  :emphasize-lines: 2-4
+
+  <table>
+    <tr>
+      ...
+    </tr>
+  </table>
+
+Tables have data
+----------------
+
+The columns in a normal row are defined by the ``<td>`` element
+
+.. code-block:: html
+  :emphasize-lines: 3-5
+
+  <table>
+    <tr>
+      <td>One</td>
+      <td>Two</td>
+      <td>Three</td>
+    </tr>
+  </table>
+
+Tables Can Have a Head and a Body
+---------------------------------
+
+.. code-block:: html
+
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Occupation</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Balloonicorn</td>
+        <td>6</td>
+        <td>Software Engineer</td>
+      </tr>
+    </tbody>
+  </table>
+
+=========== ======== =================
+Name        Age      Occupation
+=========== ======== =================
+Ballonicorn 6        Software Engineer
+=========== ======== =================
+
+Forms!
+======
+
+Forms Submit Data
+-----------------
+
+A form is a block element that contains form elements used to submit data.
+
+.. code-block:: html
+
+  <form>
+    ...
+  </form>
+
+Basic Form Elements
+-------------------
+
+Element ``<input>``:
+
+- Text
+- Radio Buttons
+- Checkboxes
+
+Element ``<select>``:
+
+- Dropdowns
+
+*All form elements submit text to the server*
+
+The <input> Element
+-------------------
+
+- The ``type`` of input is an attribute of the tag
+- ``name`` is the name of the variable sent to the server
+
+``input type="text"`` the Simple Way
+------------------------------------
+
+.. code-block:: html
+
+  <form>
+    First Name: <input type="text" name="firstname">
+  </form>
+
+.. only:: not revealjs
+
+  To set a default value for an input element, you can set
+  a `value` attribute, like::
+
+    <input type="text" value="firstname" value="Jessica">
+
+
+``input type="text"`` the Right Way
+-----------------------------------
+
+::
+
+  <form>
+    <label>First Name:
+      <input type="text" name="firstname">
+    </label>
+  </form>
+
+.. container:: one-incremental
+
+  ::
+
+    <form>
+      <label for="field-firstname">First Name:</label>
+      <input type="text" name="firstname" id="field-firstname">
+    </form>
+
+.. only:: not revealjs
+
+  That is, you can either put the `input` element inside of the
+  related `label` element, or you can have the `label` element
+  reference the `input` element directly using the ID of the
+  `input` element in the `for=...` attribute.
+
+``input type="radio"``
+----------------------
+
+Radio buttons can have only one value selected
+
+.. code-block:: html
+
+  <form>
+    <input type="radio" name="ampm" value="am">AM
+    <input type="radio" name="ampm" value="pm">PM
+  </form>
+
+``input type="checkbox"``
+-------------------------
+
+Checkboxes can have more than one value selected
+
+.. code-block:: html
+
+  <form>
+    <input type="checkbox" name="animal" value="dog">Dog
+    <input type="checkbox" name="animal" value="cat">Cat
+    <input type="checkbox" name="animal" value="hedgehog">Hedgehog
+    <input type="checkbox" name="animal" value="yak">Yak
+  </form>
+
+Dropdown menus with ``select``
+------------------------------
+
+The ``select`` and ``option`` elements have closing tags
+
+.. code-block:: html
+
+  <form>
+    Melon Type:
+      <select name="melontype">
+        <option value="watermelon">Watermelon</option>
+        <option value="honeydew">Honeydew</option>
+        <option value="canteloupe">Canteloupe</option>
+      </select>
+  </form>
+
+Make a "Submit" Button
+----------------------
+
+.. code-block:: html
+
+  <form>
+    <input type="submit">
+  </form>
+
+But! How does it know where to go?
+
+.. only:: not revealjs
+
+  If you don't provide a value for the `submit` button, your browser
+  will use a default one (often, "submit"). If you'd like this
+  button to say something else ("Search", "Save", etc), you can
+  provide this using the `value` attribute::
+
+    <input type="submit" value="Search!">
+
+Shake some ``form action``
+--------------------------
+
+- Tell the form where to go with a URL
+- `action` is an attribute on the ``<form>`` element
+
+.. code-block:: html
+
+  <form action="url-to-submit-form-to">
+    <input type="submit">
+  </form>
+
+Form methods
+------------
+
+- `method` is an attribute of the ``<form>`` tag
+- Default method is ``GET``
+
+.. code-block:: html
+
+  <form action="url-to-submit-form-to" method="GET">
+    <input type="submit">
+  </form>
+
+``method="GET"``
+----------------
+
+- Passes arguments via the URL
+- If you know the arguments, you can change the URL
+- Many websites operate this way
+- No side effect of the request (e.g. refreshing the page)
+
+.. only:: not revealjs
+
+  This should be used where the submission of the form has no
+  "side effects", i.e., nothing should change on the server side.
+  So this is a good choice for a search form since, typically,
+  searching doesn't change information on the server. It also
+  allows the user to bookmark the search-result page URL and the
+  "question" is in the URL, so they could refresh that page to
+  see updated search results.
+
+``method="POST"``
+-----------------
+
+- Passes arguments in the request (like a dictionary!)
+- Used for things you don't want passed in plaintext (e.g. credit cards)
+- Used for requests with side effects (e.g. saving data to a database)
+- "Are you sure you want to resubmit?"
+
+.. only:: not revealjs
+
+  While you don't see information in a `POST` request in the URL,
+  it's still easy for a hacker to find out this information. Therefore,
+  you shouldn't use this for truly sensitive data (like credit card
+  numbers) unless your website is served over https (secure HTTP) or
+  unless you trust all the computers between the browser and the server
+  (as you might in a specialized work environment).
+
+Looking Ahead
+=============
+
+Coming Up
+---------
+
+- `html-forms` lab exercise
+
+- CSS
+
+- Javascript
+
+- Web design intro
+
+- Lots and lots of practice in exercises
