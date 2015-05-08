@@ -87,3 +87,8 @@ pre {
 	font-size: 16px;
 	color: #AC41B3;
 }
+
+.urgent {
+	padding: 3px;
+	border: 3px dotted #000000;
+}
