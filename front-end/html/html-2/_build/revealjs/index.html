@@ -1,0 +1,273 @@
+
+
+
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <!--<title>HTML 2: Tables and Forms &mdash; Hackbright Fellowship</title>-->
+  <title>HTML 2: Tables and Forms</title>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+  <link rel="stylesheet" href="_static/revealjs/css/reveal.css"/>
+  <link rel="stylesheet" href="_static/revealjs/css/theme/white.css" id="theme"/>
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/hackbright.css"/>
+
+</head>
+<body>
+<div class="reveal">
+  <footer id="slide-footer">
+  </footer>
+
+  <div class="slides">
+    <section>
+      <h2>HTML 2: Tables and Forms</h2>
+      <div class="event"></div>
+    </section>
+
+    
+  <section id="tables">
+<section>
+<h2>Tables</h2>
+</section><section id="table-definition">
+<h3>Table definition</h3>
+<p>A table is a way to display information in rows and columns</p>
+</section><section id="id1">
+<h3>Table definition</h3>
+<p>In HTML a table is defined by the <code class="docutils literal"><span class="pre">&lt;table&gt;</span></code> element</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;table&gt;</span>
+  ...
+<span class="nt">&lt;/table&gt;</span>
+</pre></div>
+</div>
+</section><section id="tables-have-rows">
+<h3>Tables have rows</h3>
+<p>Rows of a table are defined by the <code class="docutils literal"><span class="pre">&lt;tr&gt;</span></code> element</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;table&gt;</span>
+<span class="hll">  <span class="nt">&lt;tr&gt;</span>
+</span><span class="hll">    ...
+</span><span class="hll">  <span class="nt">&lt;/tr&gt;</span>
+</span><span class="nt">&lt;/table&gt;</span>
+</pre></div>
+</div>
+</section><section id="tables-have-data">
+<h3>Tables have data</h3>
+<p>The columns in a normal row are defined by the <code class="docutils literal"><span class="pre">&lt;td&gt;</span></code> element</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;table&gt;</span>
+  <span class="nt">&lt;tr&gt;</span>
+<span class="hll">    <span class="nt">&lt;td&gt;</span>One<span class="nt">&lt;/td&gt;</span>
+</span><span class="hll">    <span class="nt">&lt;td&gt;</span>Two<span class="nt">&lt;/td&gt;</span>
+</span><span class="hll">    <span class="nt">&lt;td&gt;</span>Three<span class="nt">&lt;/td&gt;</span>
+</span>  <span class="nt">&lt;/tr&gt;</span>
+<span class="nt">&lt;/table&gt;</span>
+</pre></div>
+</div>
+</section><section id="tables-can-have-a-head-and-a-body">
+<h3>Tables Can Have a Head and a Body</h3>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;table&gt;</span>
+  <span class="nt">&lt;thead&gt;</span>
+    <span class="nt">&lt;tr&gt;</span>
+      <span class="nt">&lt;th&gt;</span>Name<span class="nt">&lt;/th&gt;</span>
+      <span class="nt">&lt;th&gt;</span>Age<span class="nt">&lt;/th&gt;</span>
+      <span class="nt">&lt;th&gt;</span>Occupation<span class="nt">&lt;/th&gt;</span>
+    <span class="nt">&lt;/tr&gt;</span>
+  <span class="nt">&lt;/thead&gt;</span>
+  <span class="nt">&lt;tbody&gt;</span>
+    <span class="nt">&lt;tr&gt;</span>
+      <span class="nt">&lt;td&gt;</span>Balloonicorn<span class="nt">&lt;/td&gt;</span>
+      <span class="nt">&lt;td&gt;</span>6<span class="nt">&lt;/td&gt;</span>
+      <span class="nt">&lt;td&gt;</span>Software Engineer<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;/tr&gt;</span>
+  <span class="nt">&lt;/tbody&gt;</span>
+<span class="nt">&lt;/table&gt;</span>
+</pre></div>
+</div>
+<table border="1" class="docutils">
+<colgroup>
+<col width="31%" />
+<col width="22%" />
+<col width="47%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Age</th>
+<th class="head">Occupation</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Ballonicorn</td>
+<td>6</td>
+<td>Software Engineer</td>
+</tr>
+</tbody>
+</table>
+</section></section><section id="forms">
+<section>
+<h2>Forms!</h2>
+</section><section id="forms-submit-data">
+<h3>Forms Submit Data</h3>
+<p>A form is a block element that contains form elements used to submit data.</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;form&gt;</span>
+  ...
+<span class="nt">&lt;/form&gt;</span>
+</pre></div>
+</div>
+</section><section id="basic-form-elements">
+<h3>Basic Form Elements</h3>
+<p>Element <code class="docutils literal"><span class="pre">&lt;input&gt;</span></code>:</p>
+<ul class="simple">
+<li>Text</li>
+<li>Radio Buttons</li>
+<li>Checkboxes</li>
+</ul>
+<p>Element <code class="docutils literal"><span class="pre">&lt;select&gt;</span></code>:</p>
+<ul class="simple">
+<li>Dropdowns</li>
+</ul>
+<p><em>All form elements submit text to the server</em></p>
+</section><section id="the-input-element">
+<h3>The &lt;input&gt; Element</h3>
+<ul class="simple">
+<li>The <code class="docutils literal"><span class="pre">type</span></code> of input is an attribute of the tag</li>
+<li><code class="docutils literal"><span class="pre">name</span></code> is the name of the variable sent to the server</li>
+</ul>
+</section><section id="input-type-text-the-simple-way">
+<h3><code class="docutils literal"><span class="pre">input</span> <span class="pre">type=&quot;text&quot;</span></code> the Simple Way</h3>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;form&gt;</span>
+  First Name: <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">name=</span><span class="s">&quot;firstname&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+</pre></div>
+</div>
+</section><section id="input-type-text-the-right-way">
+<h3><code class="docutils literal"><span class="pre">input</span> <span class="pre">type=&quot;text&quot;</span></code> the Right Way</h3>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;form&gt;</span>
+  <span class="nt">&lt;label&gt;</span>First Name:
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">name=</span><span class="s">&quot;firstname&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;/label&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+</pre></div>
+</div>
+<div class="fragment container">
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;form&gt;</span>
+  <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;field-firstname&quot;</span><span class="nt">&gt;</span>First Name:<span class="nt">&lt;/label&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">name=</span><span class="s">&quot;firstname&quot;</span> <span class="na">id=</span><span class="s">&quot;field-firstname&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+</pre></div>
+</div>
+</div>
+</section><section id="input-type-radio">
+<h3><code class="docutils literal"><span class="pre">input</span> <span class="pre">type=&quot;radio&quot;</span></code></h3>
+<p>Radio buttons can have only one value selected</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;form&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;radio&quot;</span> <span class="na">name=</span><span class="s">&quot;ampm&quot;</span> <span class="na">value=</span><span class="s">&quot;am&quot;</span><span class="nt">&gt;</span>AM
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;radio&quot;</span> <span class="na">name=</span><span class="s">&quot;ampm&quot;</span> <span class="na">value=</span><span class="s">&quot;pm&quot;</span><span class="nt">&gt;</span>PM
+<span class="nt">&lt;/form&gt;</span>
+</pre></div>
+</div>
+</section><section id="input-type-checkbox">
+<h3><code class="docutils literal"><span class="pre">input</span> <span class="pre">type=&quot;checkbox&quot;</span></code></h3>
+<p>Checkboxes can have more than one value selected</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;form&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">name=</span><span class="s">&quot;animal&quot;</span> <span class="na">value=</span><span class="s">&quot;dog&quot;</span><span class="nt">&gt;</span>Dog
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">name=</span><span class="s">&quot;animal&quot;</span> <span class="na">value=</span><span class="s">&quot;cat&quot;</span><span class="nt">&gt;</span>Cat
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">name=</span><span class="s">&quot;animal&quot;</span> <span class="na">value=</span><span class="s">&quot;hedgehog&quot;</span><span class="nt">&gt;</span>Hedgehog
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">name=</span><span class="s">&quot;animal&quot;</span> <span class="na">value=</span><span class="s">&quot;yak&quot;</span><span class="nt">&gt;</span>Yak
+<span class="nt">&lt;/form&gt;</span>
+</pre></div>
+</div>
+</section><section id="dropdown-menus-with-select">
+<h3>Dropdown menus with <code class="docutils literal"><span class="pre">select</span></code></h3>
+<p>The <code class="docutils literal"><span class="pre">select</span></code> and <code class="docutils literal"><span class="pre">option</span></code> elements have closing tags</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;form&gt;</span>
+  Melon Type:
+    <span class="nt">&lt;select</span> <span class="na">name=</span><span class="s">&quot;melontype&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;watermelon&quot;</span><span class="nt">&gt;</span>Watermelon<span class="nt">&lt;/option&gt;</span>
+      <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;honeydew&quot;</span><span class="nt">&gt;</span>Honeydew<span class="nt">&lt;/option&gt;</span>
+      <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;canteloupe&quot;</span><span class="nt">&gt;</span>Canteloupe<span class="nt">&lt;/option&gt;</span>
+    <span class="nt">&lt;/select&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+</pre></div>
+</div>
+</section><section id="make-a-submit-button">
+<h3>Make a &#8220;Submit&#8221; Button</h3>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;form&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+</pre></div>
+</div>
+<p>But! How does it know where to go?</p>
+</section><section id="shake-some-form-action">
+<h3>Shake some <code class="docutils literal"><span class="pre">form</span> <span class="pre">action</span></code></h3>
+<ul class="simple">
+<li>Tell the form where to go with a URL</li>
+<li><cite>action</cite> is an attribute on the <code class="docutils literal"><span class="pre">&lt;form&gt;</span></code> element</li>
+</ul>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">&quot;url-to-submit-form-to&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+</pre></div>
+</div>
+</section><section id="form-methods">
+<h3>Form methods</h3>
+<ul class="simple">
+<li><cite>method</cite> is an attribute of the <code class="docutils literal"><span class="pre">&lt;form&gt;</span></code> tag</li>
+<li>Default method is <code class="docutils literal"><span class="pre">GET</span></code></li>
+</ul>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">&quot;url-to-submit-form-to&quot;</span> <span class="na">method=</span><span class="s">&quot;GET&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+</pre></div>
+</div>
+</section><section id="method-get">
+<h3><code class="docutils literal"><span class="pre">method=&quot;GET&quot;</span></code></h3>
+<ul class="simple">
+<li>Passes arguments via the URL</li>
+<li>If you know the arguments, you can change the URL</li>
+<li>Many websites operate this way</li>
+<li>No side effect of the request (e.g. refreshing the page)</li>
+</ul>
+</section><section id="method-post">
+<h3><code class="docutils literal"><span class="pre">method=&quot;POST&quot;</span></code></h3>
+<ul class="simple">
+<li>Passes arguments in the request (like a dictionary!)</li>
+<li>Used for things you don&#8217;t want passed in plaintext (e.g. credit cards)</li>
+<li>Used for requests with side effects (e.g. saving data to a database)</li>
+<li>&#8220;Are you sure you want to resubmit?&#8221;</li>
+</ul>
+</section></section><section id="looking-ahead">
+<section>
+<h2>Looking Ahead</h2>
+</section><section id="coming-up">
+<h3>Coming Up</h3>
+<ul class="simple">
+<li><cite>html-forms</cite> lab exercise</li>
+<li>Understanding the DOM</li>
+<li>Javascript</li>
+<li>jQuery</li>
+</ul>
+</section></section>
+
+
+  </div>
+</div>
+
+<script src="_static/revealjs/lib/js/head.min.js"></script>
+<script src="_static/revealjs/js/reveal.js"></script>
+<script>
+  Reveal.initialize({
+    maxScale: 5,
+    width: 1280,
+    height: 800,
+    dependencies: [
+          { src: "_static/revealjs/plugin/zoom-js/zoom.js", async: true },
+          { src: "_static/revealjs/plugin/notes/notes.js", async: true },
+    ]
+  });
+</script>
+
+</body>
+</html>

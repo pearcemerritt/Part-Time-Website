@@ -1,0 +1,299 @@
+/**
+ * Slide stylesheet for Sphinx -> RevealJS for Hackbright
+ *
+ * IMPORTANT: DO NOT NAME classes with names starting with "slide";
+ * This breaks the JavaScript!
+ */
+
+
+/* ================= COMMON ELEMENTS =================== */
+
+#slide-footer {
+    background-size: 4.3960vw 4vw;
+    background-image: url("hb-logo.png");
+    background-repeat: no-repeat;
+    height: 4vw;
+    width: 4.3960vw;
+    position: absolute;
+    bottom: 2vw;
+    left: 2vw;
+}
+
+/* "Section" headings */
+.reveal h2 {
+    border: solid 1px #e64f3a;
+    padding: 0.3em 0.4em 0.3em 0.4em !important;
+    border-radius: 0.5em;
+    color: #e64f3a;
+    text-transform: none;
+}
+
+/* Title on ordinary slides */
+.reveal h3 {
+    color: #e64f3a;
+    margin-bottom: 0.5em;
+    text-transform: none;
+}
+
+
+/* ================= TITLE SLIDE =================== */
+
+/* don't show overall top-heading; we have a slide for this, instead */
+.reveal h1 {
+    display: none;
+}
+
+ /*don't show version # on title slide */
+.reveal div.event {
+    display: none;
+}
+
+.reveal > .slides > section:first-of-type h2 {
+    background-color: #e64f3a;
+    color: white;
+    padding: 0.3em 0.4em 0.3em 0.4em;
+    border-radius: 0.5em;
+    font-weight: bold;
+}
+
+
+/* =============== CODE LISTING BLOCKS =============== */
+
+.highlight-pycon {
+    position: relative;
+}
+
+.highlight-pycon .highlight pre {
+    padding-top: 2em !important;
+    background-color: black;
+}
+
+.highlight-pycon .highlight pre::before {
+    content: "Python Console";
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0 1em;
+    font-size: 60%;
+    text-transform: uppercase;
+    color: #999;
+    letter-spacing: 0.3em;
+}
+
+div.highlight {
+    background-color: transparent;
+}
+
+/* declare like this so we can move captions closer to their code blocks */
+div[class ^= "highlight-"] {
+    margin: 1em 0 !important;
+}
+
+.code-block-caption {
+    font-weight: bold !important;
+    font-style: italic !important;
+    margin-top: 1em;
+}
+
+/* code blocks that follow captions do not have space */
+.code-block-caption + div[class ^= "highlight-"] {
+    margin-top: 0 !important;
+}
+
+div.highlight pre {
+    padding: 0.5em;
+}
+
+/* Code blocks and console windows are 50-char wide */
+
+.reveal pre {
+    max-width: 50rem;
+    min-width: 30rem;
+    font-family: Consolas,"Andale Mono WT","Andale Mono","Lucida Console","Lucida Sans Typewriter","DejaVu Sans Mono","Bitstream Vera Sans Mono","Liberation Mono","Nimbus Mono L",Monaco,"Courier New",Courier,monospace !important;
+}
+
+
+/* ================ CUSTOM ROLE COLORS ================= */
+/* These should be in bold since they're hard to read otherwise */
+
+.reveal .red { color: #c00; font-weight: bold; }
+.reveal .green { color: #0c0; font-weight: bold; }
+.reveal .tan { color: #daa520; font-weight: bold; }
+.reveal .cyan { color: #0cc; font-weight: bold; }
+.gone { color: #666; text-decoration: line-through; font-weight: bold; }
+.left { text-align: left }
+
+
+/* ================= CONSOLE ==================*/
+/* black-background PRE sections showing terminal output */
+
+.reveal .console {
+    background-color: black;
+    color: #ddd;
+    padding: 1em;
+    border-radius: 0.4em;
+    margin: 2em auto;
+    max-width: 40em;
+}
+
+.reveal .console .cmd {
+    font-weight: bold;
+    color: yellow;
+}
+
+.reveal .console a { color: inherit !important; }
+
+/* Make these darker than usual so they show up better */
+
+.reveal .console .red { color: #f33; }
+.reveal .console .green { color: #3f3; }
+.reveal .console .tan { color: #daa520; }
+.reveal .console .cyan { color: #0ff; }
+.gone { color: #666; text-decoration: line-through; }
+
+
+/* =============== LISTS AND SUCH ================= */
+
+ul.simple > li {
+    margin-bottom: 0.4em;
+}
+
+ul.simple > li > ul {
+    margin-top: 0.4em;
+    font-size: 90%;
+}
+
+dd {
+    margin-bottom: 0.5em !important;
+}
+
+
+/* ============ INLINE CODING AND LITERALS =======*
+
+/* Things like ``this``; used for inline code samples, etc. */
+.docutils.literal {
+    border: solid 1px #f1a095;
+    font-family: Consolas,"Andale Mono WT","Andale Mono","Lucida Console","Lucida Sans Typewriter","DejaVu Sans Mono","Bitstream Vera Sans Mono","Liberation Mono","Nimbus Mono L",Monaco,"Courier New",Courier,monospace !important;
+    padding: 0 0.1em;
+}
+
+/* Things like `this`; used for filenames, technical terms, etc. */
+.reveal cite {
+    font-style: italic !important;
+    font-weight: bold;
+}
+
+/* ================ TABLES ==================== */
+
+/* Text is smaller and less padding, so we can fit more in */
+
+table.docutils {
+    font-size: 75%;
+}
+
+.reveal table th, .reveal table td {
+    border-color: #999;
+    padding: 0.1em 0.3em 0.1em 0.3em;
+}
+
+/* ================ IMAGES ==================*/
+
+/* Images have a border and are centered */
+
+.reveal section img {
+    box-shadow: none;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: none;
+}
+
+
+
+.reveal blockquote p.attribution {
+    display: block;
+    text-align: right;
+    font-variant: small-caps;
+    font-size: 80%;
+    margin-top: 0;
+    padding-top: 0;
+    padding-right: 1em;
+}
+
+
+.compare > div {
+    width: 49%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+
+.highlight-pycon { color: #ccc }
+/*.highlight-pycon .c { color: #586e75 } *//* Comment */
+/*.highlight-pycon .err { color: #93a1a1 } *//* Error */
+/*.highlight-pycon .g { color: #93a1a1 } *//* Generic */
+/*.highlight-pycon .k { color: #859900 } *//* Keyword */
+.highlight-pycon .l { color: #ccc }  Literal
+/*.highlight-pycon .n { color: #93a1a1 } *//* Name */
+/*.highlight-pycon .o { color: #859900 } *//* Operator */
+/*.highlight-pycon .x { color: #cb4b16 } *//* Other */
+/*.highlight-pycon .p { color: #93a1a1 } *//* Punctuation */
+/*.highlight-pycon .cm { color: #586e75 } *//* Comment.Multiline */
+/*.highlight-pycon .cp { color: #859900 } *//* Comment.Preproc */
+/*.highlight-pycon .c1 { color: #586e75 } *//* Comment.Single */
+/*.highlight-pycon .cs { color: #859900 } *//* Comment.Special */
+/*.highlight-pycon .gd { color: #2aa198 } *//* Generic.Deleted */
+/*.highlight-pycon .ge { color: #93a1a1; font-style: italic } *//* Generic.Emph */
+/*.highlight-pycon .gr { color: #dc322f } *//* Generic.Error */
+/*.highlight-pycon .gh { color: #cb4b16 } *//* Generic.Heading */
+/*.highlight-pycon .gi { color: #859900 } *//* Generic.Inserted */
+/*.highlight-pycon .go { color: #93a1a1 } *//* Generic.Output */
+/*.highlight-pycon .gp { color: #93a1a1 } *//* Generic.Prompt */
+/*.highlight-pycon .gs { color: #93a1a1; font-weight: bold } *//* Generic.Strong */
+/*.highlight-pycon .gu { color: #cb4b16 } *//* Generic.Subheading */
+/*.highlight-pycon .gt { color: #93a1a1 } *//* Generic.Traceback */
+/*.highlight-pycon .kc { color: #cb4b16 } *//* Keyword.Constant */
+/*.highlight-pycon .kd { color: #268bd2 } *//* Keyword.Declaration */
+/*.highlight-pycon .kn { color: #859900 } *//* Keyword.Namespace */
+/*.highlight-pycon .kp { color: #859900 } *//* Keyword.Pseudo */
+/*.highlight-pycon .kr { color: #268bd2 } *//* Keyword.Reserved */
+/*.highlight-pycon .kt { color: #dc322f } *//* Keyword.Type */
+/*.highlight-pycon .ld { color: #93a1a1 } *//* Literal.Date */
+/*.highlight-pycon .m { color: #2aa198 } *//* Literal.Number */
+/*.highlight-pycon .s { color: #2aa198 } *//* Literal.String */
+/*.highlight-pycon .na { color: #93a1a1 } *//* Name.Attribute */
+/*.highlight-pycon .nb { color: #B58900 } *//* Name.Builtin */
+/*.highlight-pycon .nc { color: #268bd2 } *//* Name.Class */
+/*.highlight-pycon .no { color: #cb4b16 } *//* Name.Constant */
+/*.highlight-pycon .nd { color: #268bd2 } *//* Name.Decorator */
+/*.highlight-pycon .ni { color: #cb4b16 } *//* Name.Entity */
+/*.highlight-pycon .ne { color: #cb4b16 } *//* Name.Exception */
+/*.highlight-pycon .nf { color: #268bd2 } *//* Name.Function */
+/*.highlight-pycon .nl { color: #93a1a1 } *//* Name.Label */
+/*.highlight-pycon .nn { color: #93a1a1 } *//* Name.Namespace */
+/*.highlight-pycon .nx { color: #93a1a1 } *//* Name.Other */
+/*.highlight-pycon .py { color: #93a1a1 } *//* Name.Property */
+/*.highlight-pycon .nt { color: #268bd2 } *//* Name.Tag */
+/*.highlight-pycon .nv { color: #268bd2 } *//* Name.Variable */
+/*.highlight-pycon .ow { color: #859900 } *//* Operator.Word */
+/*.highlight-pycon .w { color: #93a1a1 } *//* Text.Whitespace */
+/*.highlight-pycon .mf { color: #2aa198 } *//* Literal.Number.Float */
+/*.highlight-pycon .mh { color: #2aa198 } *//* Literal.Number.Hex */
+/*.highlight-pycon .mi { color: #2aa198 } *//* Literal.Number.Integer */
+/*.highlight-pycon .mo { color: #2aa198 } *//* Literal.Number.Oct */
+/*.highlight-pycon .sb { color: #586e75 } *//* Literal.String.Backtick */
+/*.highlight-pycon .sc { color: #2aa198 } *//* Literal.String.Char */
+/*.highlight-pycon .sd { color: #93a1a1 } *//* Literal.String.Doc */
+/*.highlight-pycon .s2 { color: #2aa198 } *//* Literal.String.Double */
+/*.highlight-pycon .se { color: #cb4b16 } *//* Literal.String.Escape */
+/*.highlight-pycon .sh { color: #93a1a1 } *//* Literal.String.Heredoc */
+/*.highlight-pycon .si { color: #2aa198 } *//* Literal.String.Interpol */
+/*.highlight-pycon .sx { color: #2aa198 } *//* Literal.String.Other */
+/*.highlight-pycon .sr { color: #dc322f } *//* Literal.String.Regex */
+/*.highlight-pycon .s1 { color: #2aa198 } *//* Literal.String.Single */
+/*.highlight-pycon .ss { color: #2aa198 } *//* Literal.String.Symbol */
+/*.highlight-pycon .bp { color: #268bd2 } *//* Name.Builtin.Pseudo */
+/*.highlight-pycon .vc { color: #268bd2 } *//* Name.Variable.Class */
+/*.highlight-pycon .vg { color: #268bd2 } *//* Name.Variable.Global */
+/*.highlight-pycon .vi { color: #268bd2 } *//* Name.Variable.Instance */
+/*.highlight-pycon .il { color: #2aa198 } *//* Literal.Number.Integer.Long */

@@ -288,10 +288,9 @@ Coming Up
 
 - `html-forms` lab exercise
 
-- CSS
+- Understanding the DOM
 
 - Javascript
 
-- Web design intro
+- jQuery
 
-- Lots and lots of practice in exercises
