@@ -1,0 +1,210 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>HTML: Forms</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/hackbright.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Hackbright Fellowship" href="#"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+          <p class="project">Hackbright Fellowship Spring 2015</p>
+          <a href="#">HTML: Forms</a>
+        
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">HTML: Forms</a><ul>
+<li><a class="reference internal" href="#specifications">Specifications</a><ul>
+<li><a class="reference internal" href="#header">Header</a></li>
+<li><a class="reference internal" href="#body">Body</a><ul>
+<li><a class="reference internal" href="#h1-element">h1 element</a></li>
+<li><a class="reference internal" href="#table">Table</a></li>
+<li><a class="reference internal" href="#text">Text</a></li>
+<li><a class="reference internal" href="#form">Form</a></li>
+<li><a class="reference internal" href="#footer">Footer</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#screenshot">Screenshot</a></li>
+</ul>
+</li>
+</ul>
+</div>
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="#">HTML: Forms</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+          <div role="main" class="document">
+            
+  <div class="section" id="html-forms">
+<h1>HTML: Forms<a class="headerlink" href="#html-forms" title="Permalink to this headline">¶</a></h1>
+<p>Make a simple order form using tables and forms and submit it to a server.</p>
+<p>Your goal is to make something that looks like the screenshot below.
+An example can also be viewed here: <a class="reference external" href="https://ubermelon-order-form.herokuapp.com/">Ubermelon Order Form</a></p>
+<p>You can open a file in Chrome by using <cite>File &gt; Open</cite> and navigating to your <cite>form.html</cite>,
+which you should put in ~/src/html-forms/.</p>
+<div class="section" id="specifications">
+<h2>Specifications<a class="headerlink" href="#specifications" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="header">
+<h3>Header<a class="headerlink" href="#header" title="Permalink to this headline">¶</a></h3>
+<p>The header should have a title: &#8220;Ubermelon Order Form&#8221;</p>
+</div>
+<div class="section" id="body">
+<h3>Body<a class="headerlink" href="#body" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="h1-element">
+<h4>h1 element<a class="headerlink" href="#h1-element" title="Permalink to this headline">¶</a></h4>
+<p>The command &#8220;Order!&#8221; is in an h1 tag.</p>
+</div>
+<div class="section" id="table">
+<h4>Table<a class="headerlink" href="#table" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>The table has two header columns, &#8220;Melon Name&#8221; and &#8220;Price per lb&#8221;.</li>
+<li>The names and prices of the melons are in the screenshot</li>
+</ul>
+</div>
+<div class="section" id="text">
+<h4>Text<a class="headerlink" href="#text" title="Permalink to this headline">¶</a></h4>
+<p>The &#8220;Place your orders here! You know you want to.&#8221; is in a paragraph.</p>
+</div>
+<div class="section" id="form">
+<h4>Form<a class="headerlink" href="#form" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>First Name is a text input, with a name of &#8220;firstname&#8221;</li>
+<li>Last Name is a text input, with a name of &#8220;lastname&#8221;</li>
+<li>Use the correct accessibility syntax for the text inputs, with a
+&#8220;label for&#8221; and &#8220;id&#8221; (or enclose the input in the label, which is
+equally good for accessibility)</li>
+<li>Melon Type is a dropdown with name &#8220;melontype&#8221;</li>
+<li>The types of melons are: watermelon, honeydew, canteloupe, crenshaw,
+canary</li>
+<li>Quantity is a text input with name of &#8220;quantity&#8221;</li>
+<li>Delivery Time is a radio button with name &#8220;time&#8221;</li>
+<li>Delivery Time has values of &#8220;am&#8221;, &#8220;pm&#8221;, and &#8220;wat&#8221;</li>
+<li>Returning Customer is a radio button and values of &#8220;yes&#8221; and &#8220;no&#8221;</li>
+<li>Statistics is a checkbox with name &#8220;stats&#8221; and values of &#8220;Dog&#8221;,
+&#8220;Cat&#8221;, &#8220;Hedgehog&#8221;, &#8220;Balloonicorn&#8221;, and &#8220;Yak&#8221;</li>
+<li>The submit button is of type &#8220;submit&#8221;</li>
+<li>The form action should go to:
+<cite>https://ubermelon-order-form.herokuapp.com/process</cite></li>
+<li>You can use either a <cite>GET</cite> or <cite>POST</cite> request. Try them both!</li>
+</ul>
+</div>
+<div class="section" id="footer">
+<h4>Footer<a class="headerlink" href="#footer" title="Permalink to this headline">¶</a></h4>
+<p>The disclaimer about the quantities is in a footer tag.</p>
+</div>
+</div>
+</div>
+<div class="section" id="screenshot">
+<h2>Screenshot<a class="headerlink" href="#screenshot" title="Permalink to this headline">¶</a></h2>
+<img alt="_images/form.png" src="_images/form.png" />
+<p><strong>STOP. Please ask for a code review.</strong></p>
+<p>If you finish this and there is time, please see <a class="reference external" href="further-study.html">Further Study</a>.</p>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
