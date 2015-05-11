@@ -1,0 +1,234 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Solution</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/hackbright.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Hackbright Fellowship" href="../index.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+          <p class="project">Hackbright Fellowship Spring 2015</p>
+          <a href="../index.html">Solution</a>
+        
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Solution</a></li>
+</ul>
+</div>
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Solution</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+          <div role="main" class="document">
+            
+  <div class="section" id="solution">
+<h1>Solution<a class="headerlink" href="#solution" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-html"><div class="highlight"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+
+<span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;title&gt;</span>Ubermelon Order Form<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+
+<span class="nt">&lt;body&gt;</span>
+<span class="nt">&lt;h1&gt;</span>Order!<span class="nt">&lt;/h1&gt;</span>
+
+<span class="nt">&lt;table&gt;</span>
+    <span class="nt">&lt;thead&gt;</span>
+    <span class="nt">&lt;tr&gt;</span>
+        <span class="nt">&lt;td&gt;</span>Melon Name<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td&gt;</span>Price per lb.<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;/tr&gt;</span>
+    <span class="nt">&lt;/thead&gt;</span>
+    <span class="nt">&lt;tbody&gt;</span>
+    <span class="nt">&lt;tr&gt;</span>
+        <span class="nt">&lt;td&gt;</span>Watermelon<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td&gt;</span>$1.59<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;/tr&gt;</span>
+    <span class="nt">&lt;tr&gt;</span>
+        <span class="nt">&lt;td&gt;</span>Honeydew<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td&gt;</span>$0.99<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;/tr&gt;</span>
+    <span class="nt">&lt;tr&gt;</span>
+        <span class="nt">&lt;td&gt;</span>Canteloupe<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td&gt;</span>$1.29<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;/tr&gt;</span>
+    <span class="nt">&lt;tr&gt;</span>
+        <span class="nt">&lt;td&gt;</span>Crenshaw<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td&gt;</span>$2.19<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;/tr&gt;</span>
+    <span class="nt">&lt;tr&gt;</span>
+        <span class="nt">&lt;td&gt;</span>Canary<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td&gt;</span>$11.99<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;/tr&gt;</span>
+    <span class="nt">&lt;/tbody&gt;</span>
+<span class="nt">&lt;/table&gt;</span>
+
+<span class="nt">&lt;p&gt;</span>Place your orders here! You know you want to.<span class="nt">&lt;/p&gt;</span>
+
+<span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">&quot;https://ubermelon-order-form.herokuapp.com/process&quot;</span> <span class="na">method=</span><span class="s">&quot;get&quot;</span><span class="nt">&gt;</span>
+
+    <span class="nt">&lt;label&gt;</span>First Name <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">name=</span><span class="s">&quot;firstname&quot;</span><span class="nt">&gt;&lt;/label&gt;&lt;br&gt;</span>
+
+    <span class="nt">&lt;label&gt;</span>Last Name <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">name=</span><span class="s">&quot;lastname&quot;</span><span class="nt">&gt;&lt;/label&gt;&lt;br&gt;</span>
+
+    <span class="nt">&lt;label&gt;</span>
+        Melon Type
+        <span class="nt">&lt;select</span> <span class="na">name=</span><span class="s">&quot;melontype&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;watermelon&quot;</span><span class="nt">&gt;</span>Watermelon<span class="nt">&lt;/option&gt;</span>
+            <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;honeydew&quot;</span><span class="nt">&gt;</span>Honeydew<span class="nt">&lt;/option&gt;</span>
+            <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;canteloupe&quot;</span><span class="nt">&gt;</span>Canteloupe<span class="nt">&lt;/option&gt;</span>
+            <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;crenshaw&quot;</span><span class="nt">&gt;</span>Crenshaw<span class="nt">&lt;/option&gt;</span>
+            <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;canary&quot;</span><span class="nt">&gt;</span>Canary<span class="nt">&lt;/option&gt;</span>
+        <span class="nt">&lt;/select&gt;</span>
+    <span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;br&gt;</span>
+
+    <span class="nt">&lt;label&gt;</span>
+    Quantity*:
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">name=</span><span class="s">&quot;quantity&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;/label&gt;</span>
+        <span class="nt">&lt;br&gt;</span>
+
+    Delivery Time
+    <span class="nt">&lt;label&gt;&lt;input</span> <span class="na">type=</span><span class="s">&quot;radio&quot;</span> <span class="na">name=</span><span class="s">&quot;time&quot;</span> <span class="na">value=</span><span class="s">&quot;am&quot;</span><span class="nt">&gt;</span>12:00am-12:00pm<span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;label&gt;&lt;input</span> <span class="na">type=</span><span class="s">&quot;radio&quot;</span> <span class="na">name=</span><span class="s">&quot;time&quot;</span> <span class="na">value=</span><span class="s">&quot;pm&quot;</span><span class="nt">&gt;</span>12:00pm-12:00am<span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;label&gt;&lt;input</span> <span class="na">type=</span><span class="s">&quot;radio&quot;</span> <span class="na">name=</span><span class="s">&quot;time&quot;</span> <span class="na">value=</span><span class="s">&quot;wat&quot;</span><span class="nt">&gt;</span>Time is an illusion<span class="nt">&lt;/label&gt;</span>
+
+    <span class="nt">&lt;br&gt;</span>
+
+    Returning Customer?
+    <span class="nt">&lt;label&gt;&lt;input</span> <span class="na">type=</span><span class="s">&quot;radio&quot;</span> <span class="na">name=</span><span class="s">&quot;returning&quot;</span> <span class="na">value=</span><span class="s">&quot;yes&quot;</span><span class="nt">&gt;</span>Yes<span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;label&gt;&lt;input</span> <span class="na">type=</span><span class="s">&quot;radio&quot;</span> <span class="na">name=</span><span class="s">&quot;returning&quot;</span> <span class="na">value=</span><span class="s">&quot;no&quot;</span><span class="nt">&gt;</span>No<span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;br&gt;</span>
+
+    For Statistical Purposes:
+    <span class="nt">&lt;label&gt;&lt;input</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">name=</span><span class="s">&quot;stats&quot;</span> <span class="na">value=</span><span class="s">&quot;Dog&quot;</span><span class="nt">&gt;</span>Dog<span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;label&gt;&lt;input</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">name=</span><span class="s">&quot;stats&quot;</span> <span class="na">value=</span><span class="s">&quot;Cat&quot;</span><span class="nt">&gt;</span>Cat<span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;label&gt;&lt;input</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">name=</span><span class="s">&quot;stats&quot;</span> <span class="na">value=</span><span class="s">&quot;Hedgehog&quot;</span><span class="nt">&gt;</span>Hedgehog<span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;label&gt;&lt;input</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">name=</span><span class="s">&quot;stats&quot;</span> <span class="na">value=</span><span class="s">&quot;Balloonicorn&quot;</span><span class="nt">&gt;</span>Balloonicorn<span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;label&gt;&lt;input</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">name=</span><span class="s">&quot;stats&quot;</span> <span class="na">value=</span><span class="s">&quot;Yak&quot;</span><span class="nt">&gt;</span>Yak<span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;br&gt;</span>
+
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span><span class="nt">&gt;</span>
+
+<span class="nt">&lt;/form&gt;</span>
+
+<span class="nt">&lt;footer&gt;</span>*Quantities given are by the flat.<span class="nt">&lt;/footer&gt;</span>
+
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</pre></div>
+</div>
+<p>We&#8217;re being particularly careful about making sure that all of our input elements
+are surrounded by <code class="docutils literal"><span class="pre">&lt;label&gt;</span></code> elements, so that browsers could provide useful
+hints for visually-impaired users. This is very good practice but not strictly
+required, so you could also get the same effective results in most browsers by
+leaving out the <code class="docutils literal"><span class="pre">&lt;label&gt;</span></code> elements.</p>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
