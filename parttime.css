@@ -86,3 +86,7 @@ pre {
 	padding: 3px;
 	border: 3px dotted #000000;
 }
+
+/*h3 {
+	clear: both; Undoes float to element returns to normal flow on the page
+}*/
