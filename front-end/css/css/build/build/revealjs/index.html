@@ -1,0 +1,486 @@
+
+
+
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <!--<title>CSS &mdash; Hackbright Fellowship</title>-->
+  <title>CSS</title>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+  <link rel="stylesheet" href="static/revealjs/css/reveal.css"/>
+  <link rel="stylesheet" href="static/revealjs/css/theme/white.css" id="theme"/>
+  <link rel="stylesheet" href="static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="static/hackbright.css"/>
+
+</head>
+<body>
+<div class="reveal">
+  <footer id="slide-footer">
+  </footer>
+
+  <div class="slides">
+    <section>
+      <h2>CSS</h2>
+      <div class="event"></div>
+    </section>
+
+    
+  <section id="cascading-style-sheets">
+<section>
+<h2>Cascading Style Sheets</h2>
+</section><section id="our-goals">
+<h3>Our Goals</h3>
+<ul class="simple">
+<li>Learn enough CSS to make things look rad</li>
+<li>Learn about the three parts of a CSS rule</li>
+<li>Learn about the flow of the document</li>
+</ul>
+</section><section id="separating-content-from-presentation">
+<h3>Separating Content from Presentation</h3>
+<p>OLD SCHOOL:</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;p&gt;</span>
+  <span class="nt">&lt;font</span> <span class="na">color=</span><span class="s">&quot;red&quot;</span><span class="nt">&gt;</span>
+    In the old days, this is how we made text in each paragraph red.
+  <span class="nt">&lt;/font&gt;</span>
+<span class="nt">&lt;/p&gt;</span>
+</pre></div>
+</div>
+<div class="fragment container">
+<p>BUT NOW...</p>
+<div class="highlight-css"><div class="highlight"><pre><span class="nt">p</span> <span class="p">{</span>
+   <span class="k">color</span><span class="o">:</span> <span class="nb">red</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;p&gt;</span>
+  all paragraphs are now red!
+<span class="nt">&lt;/p&gt;</span>
+</pre></div>
+</div>
+</div>
+</section><section id="some-simple-syntax">
+<h3>Some Simple Syntax</h3>
+<p>CSS is made up of <code class="docutils literal"><span class="pre">selectors</span></code>, <code class="docutils literal"><span class="pre">properties</span></code>, and <code class="docutils literal"><span class="pre">values</span></code>.</p>
+<div class="highlight-css"><div class="highlight"><pre><span class="nt">selector</span> <span class="p">{</span>
+   <span class="n">property</span><span class="o">:</span> <span class="n">value</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="fragment container">
+<p>In this example, we&#8217;re <em>selecting</em> all <code class="docutils literal"><span class="pre">&lt;p&gt;</span></code> elements
+and styling them.</p>
+<div class="highlight-css"><div class="highlight"><pre><span class="nt">p</span> <span class="p">{</span>
+   <span class="k">color</span><span class="o">:</span> <span class="nb">red</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</section></section><section id="where-things-go">
+<section>
+<h2>Where Things Go</h2>
+</section><section id="inline-style">
+<h3>Inline Style</h3>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;p</span> <span class="na">style=</span><span class="s">&quot;color:red;&quot;</span><span class="nt">&gt;</span>
+  this paragraph has inline styling applied to it.
+<span class="nt">&lt;/p&gt;</span>
+</pre></div>
+</div>
+</section><section id="internal-style-rules">
+<h3>Internal Style Rules</h3>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;html&gt;</span>
+  <span class="nt">&lt;head&gt;</span>
+      <span class="nt">&lt;style&gt;</span>
+
+        <span class="c">/* CSS goes here */</span>
+
+      <span class="nt">&lt;/style&gt;</span>
+  <span class="nt">&lt;/head&gt;</span>
+  <span class="nt">&lt;body&gt;</span>
+
+    <span class="c">&lt;!-- HTML goes here --&gt;</span>
+
+  <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</pre></div>
+</div>
+</section><section id="external-style-rules">
+<h3>External Style Rules</h3>
+<p>If we make a css file called <cite>style.css</cite>:</p>
+<div class="highlight-css"><div class="highlight"><pre><span class="c">/* style.css */</span>
+
+<span class="nt">selector</span> <span class="p">{</span>
+     <span class="n">property</span><span class="o">:</span> <span class="n">value</span><span class="p">;</span>
+  <span class="p">}</span>
+
+<span class="nt">selector</span> <span class="p">{</span>
+     <span class="n">property</span><span class="o">:</span> <span class="n">value</span><span class="p">;</span>
+     <span class="n">another</span><span class="o">-</span><span class="n">property</span><span class="o">:</span> <span class="n">value</span><span class="p">;</span>
+  <span class="p">}</span>
+
+<span class="o">...</span>
+</pre></div>
+</div>
+</section><section id="id5">
+<h3>External Style Rules</h3>
+<p>We can then <code class="docutils literal"><span class="pre">link</span></code> to it in our <code class="docutils literal"><span class="pre">html</span></code>...</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;html&gt;</span>
+  <span class="nt">&lt;head&gt;</span>
+
+    <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href=</span><span class="s">&quot;./style.css&quot;</span><span class="nt">&gt;</span>
+
+  <span class="nt">&lt;/head&gt;</span>
+  <span class="nt">&lt;body&gt;</span>
+
+    ...
+
+  <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</pre></div>
+</div>
+</section><section id="specificity">
+<h3>Specificity</h3>
+<div class="highlight-css"><div class="highlight"><pre><span class="nt">p</span> <span class="p">{</span> <span class="k">color</span><span class="o">:</span> <span class="nb">blue</span> <span class="p">}</span>
+     <span class="nc">.urgent</span> <span class="p">{</span> <span class="k">color</span><span class="o">:</span> <span class="nb">red</span> <span class="p">}</span>
+     <span class="nt">p</span><span class="nf">#form-error-message</span> <span class="p">{</span> <span class="k">color</span><span class="o">:</span> <span class="nb">green</span><span class="p">;</span> <span class="p">}</span>
+
+     <span class="nt">p</span><span class="nf">#form-error-message</span> <span class="p">{</span> <span class="k">color</span><span class="o">:</span> <span class="nb">green</span><span class="p">;</span> <span class="p">}</span>
+<span class="nt">p</span> <span class="p">{</span> <span class="k">color</span><span class="o">:</span> <span class="nb">blue</span> <span class="p">}</span>
+     <span class="nc">.urgent</span> <span class="p">{</span> <span class="k">color</span><span class="o">:</span> <span class="nb">red</span> <span class="p">}</span>
+</pre></div>
+</div>
+</section></section><section id="selectors">
+<section>
+<h2>Selectors</h2>
+</section><section id="id1">
+<h3>Selectors</h3>
+<pre class="literal-block">
+<span class="red">selector</span> {
+   property: value;
+}
+</pre>
+</section><section id="elements-as-selectors">
+<h3>Elements as Selectors</h3>
+<p>Use an <code class="docutils literal"><span class="pre">element</span></code> if you want to target all elements of a certain type.</p>
+<div class="highlight-css"><div class="highlight"><pre><span class="nt">h1</span> <span class="p">{</span>
+   <span class="k">font-family</span><span class="o">:</span> <span class="k">sans-serif</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section><section id="ids-as-selectors">
+<h3>Ids as Selectors</h3>
+<p>Use an <code class="docutils literal"><span class="pre">#id</span></code> if you want to selectively target one element.</p>
+<div class="highlight-css"><div class="highlight"><pre><span class="nf">#notice</span> <span class="p">{</span>
+   <span class="k">font-family</span><span class="o">:</span> <span class="k">monospace</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section><section id="classes-as-selectors">
+<h3>Classes as Selectors</h3>
+<p>Use a <code class="docutils literal"><span class="pre">.class</span></code> if you want to selectively target several elements.</p>
+<div class="highlight-css"><div class="highlight"><pre><span class="nc">.urgent</span> <span class="p">{</span>
+   <span class="k">color</span><span class="o">:</span> <span class="nb">red</span><span class="p">;</span>
+   <span class="k">font-weight</span><span class="o">:</span> <span class="k">bold</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section><section id="block-elements">
+<h3>Block Elements</h3>
+<ul class="simple">
+<li>start on a new line</li>
+<li>take up the whole width of their containing element</li>
+</ul>
+<img alt="_images/block.png" src="_images/block.png" />
+</section><section id="examples">
+<h3>Examples</h3>
+<div class="container">
+<ul class="simple">
+<li class="fragment">paragraphs (<code class="docutils literal"><span class="pre">&lt;p&gt;</span></code>)</li>
+<li class="fragment">headers (<code class="docutils literal"><span class="pre">h1</span></code>, <code class="docutils literal"><span class="pre">h2</span></code>, etc.)</li>
+<li class="fragment">items in a list (<code class="docutils literal"><span class="pre">&lt;li&gt;</span></code>).</li>
+<li class="fragment"><strong>[NEW]</strong> the <code class="docutils literal"><span class="pre">&lt;div&gt;</span></code> element.</li>
+</ul>
+</div>
+</section><section id="inline-elements">
+<h3>Inline Elements</h3>
+<ul class="simple">
+<li>sit on a line together</li>
+<li>don&#8217;t break the flow of your document</li>
+</ul>
+<img alt="_images/inline.png" src="_images/inline.png" />
+</section><section id="id2">
+<h3>Examples</h3>
+<div class="container">
+<ul class="simple">
+<li class="fragment">hyperlinks (<code class="docutils literal"><span class="pre">&lt;a&gt;</span></code>)</li>
+<li class="fragment">emphasized text (<code class="docutils literal"><span class="pre">&lt;em&gt;</span></code>)</li>
+<li class="fragment"><strong>[NEW]</strong> the <code class="docutils literal"><span class="pre">&lt;span&gt;</span></code> element.</li>
+</ul>
+</div>
+</section><section id="div-and-span">
+<h3><code class="docutils literal"><span class="pre">div</span></code> and <code class="docutils literal"><span class="pre">span</span></code></h3>
+<div class="container">
+<ul class="simple">
+<li class="fragment"><code class="docutils literal"><span class="pre">div</span></code> is a general purpose <code class="docutils literal"><span class="pre">block</span></code> element</li>
+<li class="fragment"><code class="docutils literal"><span class="pre">span</span></code> is a general purpose <code class="docutils literal"><span class="pre">inline</span></code> element</li>
+</ul>
+</div>
+<div class="fragment container">
+What do we mean by <em>general purpose</em>?</div>
+</section><section id="in-practice">
+<h3>In Practice</h3>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;notice&quot;</span><span class="nt">&gt;</span> How are you, gentlemen?
+  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;urgent&quot;</span><span class="nt">&gt;</span> All your base are belong to us.<span class="nt">&lt;/span&gt;</span>
+  You are on the way to destruction.
+  You have no chance to survive
+  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;urgent&quot;</span><span class="nt">&gt;</span> make your time.<span class="nt">&lt;/span&gt;</span>
+  Ha Ha Ha Ha ...
+<span class="nt">&lt;/div&gt;</span>
+</pre></div>
+</div>
+</section><section id="combining-selectors">
+<h3>Combining Selectors</h3>
+<div class="compare container">
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;urgent&quot;</span><span class="nt">&gt;</span>
+  This is an urgent block of text!
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;p&gt;</span>
+  And this is a regular paragraph that has an
+  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;urgent&quot;</span><span class="nt">&gt;</span>urgent<span class="nt">&lt;/span&gt;</span>
+  section within it.
+<span class="nt">&lt;/p&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-css"><div class="highlight"><pre><span class="c">/* select divs that have the urgent class */</span>
+
+<span class="nt">div</span><span class="nc">.urgent</span> <span class="p">{</span>
+  <span class="k">color</span><span class="o">:</span> <span class="nb">white</span><span class="p">;</span>
+  <span class="k">background-color</span><span class="o">:</span> <span class="nb">red</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* select all elements with the urgent class</span>
+<span class="c">   that are within a paragraph */</span>
+
+<span class="nt">p</span> <span class="nc">.urgent</span> <span class="p">{</span>
+  <span class="k">color</span><span class="o">:</span> <span class="nb">red</span><span class="p">;</span>
+  <span class="k">font-weight</span><span class="o">:</span> <span class="k">bold</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</section></section><section id="properties">
+<section>
+<h2>Properties</h2>
+</section><section id="id3">
+<h3>Properties</h3>
+<pre class="literal-block">
+selector {
+   <span class="red">property</span> : value;
+}
+</pre>
+</section><section id="general-properties">
+<h3>General Properties</h3>
+<ul class="simple">
+<li>margin</li>
+<li>padding</li>
+<li>border</li>
+</ul>
+</section><section id="block-properties">
+<h3>Block Properties</h3>
+<ul class="simple">
+<li>width</li>
+<li>height</li>
+<li>float</li>
+</ul>
+</section><section id="inline-text-properties">
+<h3>Inline/Text Properties</h3>
+<ul class="simple">
+<li>text-align</li>
+<li>text-decoration</li>
+<li>text-transformation</li>
+<li>line-height</li>
+<li>vertical-align</li>
+</ul>
+</section><section id="font-properties">
+<h3>Font Properties</h3>
+<ul class="simple">
+<li>color</li>
+<li>font-family</li>
+<li>font-size</li>
+<li>font-style</li>
+<li>font-weight</li>
+</ul>
+</section><section id="background-properties">
+<h3>Background Properties</h3>
+<ul class="simple">
+<li>background-color</li>
+<li>background-image</li>
+<li>background-repeat</li>
+<li>background-position</li>
+</ul>
+</section><section id="list-and-link-properties">
+<h3>List and Link Properties</h3>
+<ul class="simple">
+<li>list-style-type (lists)</li>
+<li>text-decoration (links)</li>
+</ul>
+</section></section><section id="values">
+<section>
+<h2>Values</h2>
+</section><section id="id4">
+<h3>Values</h3>
+<pre class="literal-block">
+selector {
+   property: <span class="red">value</span>;
+}
+</pre>
+</section><section id="keyword-values">
+<h3>Keyword Values</h3>
+<div class="highlight-css"><div class="highlight"><pre><span class="nt">p</span> <span class="p">{</span>
+  <span class="k">text-align</span><span class="o">:</span> <span class="k">left</span><span class="p">;</span>
+  <span class="k">text-align</span><span class="o">:</span> <span class="k">right</span><span class="p">;</span>
+  <span class="k">text-align</span><span class="o">:</span> <span class="k">center</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section><section id="notes-about-numeric-units">
+<h3>Notes about Numeric Units</h3>
+<p>Zero values shouldn&#8217;t have a unit:</p>
+<div class="highlight-css"><div class="highlight"><pre><span class="nt">body</span> <span class="p">{</span>
+  <span class="k">margin</span><span class="o">:</span> <span class="m">0px</span><span class="p">;</span>       <span class="c">/* bad!  */</span>
+  <span class="k">margin</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>         <span class="c">/* good! */</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Decimal values should have a leading zero:</p>
+<div class="highlight-css"><div class="highlight"><pre><span class="nt">footer</span> <span class="p">{</span>
+  <span class="k">font-size</span><span class="o">:</span> <span class="m">.75em</span><span class="p">;</span>   <span class="c">/* bad!  */</span>
+  <span class="k">font-size</span><span class="o">:</span> <span class="m">0.75em</span><span class="p">;</span>  <span class="c">/* good! */</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section><section id="functional-values">
+<h3>Functional Values</h3>
+<div class="highlight-css"><div class="highlight"><pre><span class="nt">body</span> <span class="p">{</span>
+   <span class="k">background-image</span><span class="o">:</span> <span class="sx">url(&quot;static/img/bg-image.jpg&quot;)</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section><section id="color-values">
+<h3>Color Values</h3>
+<p>Referencing colors can be done in three primary ways: color name,
+hex value, and red-green-blue value.</p>
+<div class="highlight-css"><div class="highlight"><pre><span class="nt">p</span> <span class="p">{</span>
+   <span class="k">color</span><span class="o">:</span> <span class="nb">red</span><span class="p">;</span>            <span class="c">/* or */</span>
+   <span class="k">color</span><span class="o">:</span> <span class="m">#ff0000</span><span class="p">;</span>        <span class="c">/* or */</span>
+   <span class="k">color</span><span class="o">:</span> <span class="k">rgb</span><span class="p">(</span><span class="m">255</span><span class="o">,</span> <span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section><section id="the-anatomy-of-a-block-element">
+<h3>The Anatomy of a Block Element</h3>
+<p>Block elements have some attributes that are applied to all four sides:</p>
+<ul class="simple">
+<li>margin</li>
+<li>padding</li>
+<li>border</li>
+</ul>
+<img alt="_images/box.png" src="_images/box.png" />
+</section><section id="id6">
+<h3>The Anatomy of a Block Element</h3>
+<div class="highlight-css"><div class="highlight"><pre><span class="nt">div</span> <span class="p">{</span>
+
+  <span class="k">margin</span><span class="o">:</span> <span class="m">20px</span><span class="p">;</span>               <span class="c">/* all have 20px margin */</span>
+
+  <span class="k">margin</span><span class="o">:</span> <span class="m">75px</span> <span class="m">50px</span><span class="p">;</span>          <span class="c">/* top/bottom=75px, right/left=50px */</span>
+
+  <span class="k">margin</span><span class="o">:</span> <span class="m">5px</span> <span class="m">3em</span> <span class="m">20%</span> <span class="m">23pt</span><span class="p">;</span>   <span class="c">/* top -&gt; right -&gt; bottom -&gt; left  */</span>
+
+  <span class="k">margin-left</span><span class="o">:</span> <span class="m">30px</span><span class="p">;</span>          <span class="c">/* the left margin is 30px  */</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</section><section id="displays-block-and-inline">
+<h3>Displays: Block and Inline</h3>
+<dl class="docutils">
+<dt>display: block</dt>
+<dd>the default display value for block elements</dd>
+<dt>display: inline</dt>
+<dd>the default display value for inline elements</dd>
+<dt>display: inline-block</dt>
+<dd>display as a block element that will flow with the surrounding content</dd>
+</dl>
+<p>These properties can be used to manipulate the display of a webpage.</p>
+</section><section id="centering-things">
+<h3>Centering Things</h3>
+<p>There are two helpful ways of centering objects.</p>
+<div class="highlight-css"><div class="highlight"><pre><span class="nt">h1</span> <span class="p">{</span>
+   <span class="k">text-align</span><span class="o">:</span> <span class="k">center</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="highlight-css"><div class="highlight"><pre><span class="nt">div</span> <span class="p">{</span>
+   <span class="k">margin</span><span class="o">:</span> <span class="m">0</span> <span class="k">auto</span><span class="p">;</span>
+   <span class="k">width</span><span class="o">:</span> <span class="m">600px</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Centering block elements requires that you specify their width.</strong></p>
+</section><section id="floating">
+<h3>Floating</h3>
+<p>the <code class="docutils literal"><span class="pre">float</span></code> property and text wrapping:</p>
+<div class="highlight-css"><div class="highlight"><pre><span class="nt">img</span> <span class="p">{</span>
+   <span class="k">float</span><span class="o">:</span> <span class="k">left</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section></section><section id="separate-css-files">
+<section>
+<h2>Separate CSS Files</h2>
+</section><section id="linking">
+<h3>Linking</h3>
+<p>We have a lot of css in our <code class="docutils literal"><span class="pre">&lt;style&gt;</span></code> element.</p>
+<p>Let&#8217;s move it to a dedicated css file &amp; link to it instead.</p>
+</section></section><section id="looking-ahead">
+<section>
+<h2>Looking Ahead</h2>
+</section><section id="coming-up">
+<h3>Coming Up</h3>
+<p>DOM Manipulation.</p>
+</section><section id="resources">
+<h3>Resources!</h3>
+<ul class="simple">
+<li><a class="reference external" href="http://shop.oreilly.com/product/9780596159924.do">Head First HTML and CSS
+[book]</a></li>
+<li><a class="reference external" href="https://flukeout.github.io/">Delightful CSS selectors game [fun]</a></li>
+<li><a class="reference external" href="http://code.tutsplus.com/tutorials/the-30-css-selectors-you-must-memorize--net-16048">The 30 CSS Selectors You Must Memorize
+[article]</a></li>
+</ul>
+</section></section>
+
+
+  </div>
+</div>
+
+<script src="static/revealjs/lib/js/head.min.js"></script>
+<script src="static/revealjs/js/reveal.js"></script>
+<script>
+  Reveal.initialize({
+    maxScale: 5,
+    width: 1280,
+    height: 800,
+    dependencies: [
+          { src: "static/revealjs/plugin/zoom-js/zoom.js", async: true },
+          { src: "static/revealjs/plugin/notes/notes.js", async: true },
+    ]
+  });
+</script>
+
+</body>
+</html>
