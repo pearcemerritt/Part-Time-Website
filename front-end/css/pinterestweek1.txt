@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<head>
+    <link href="pinterestweek1.css" rel="stylesheet">
+</head>
+
+
+<div class='my-card'>
+    <img class="my-image" 
+        src="https://s-media-cache-ak0.pinimg.com/236x/7c/5d/86/7c5d86128f6cf83a60c562d86e18f32c.jpg">
+    <div class="my-caption">
+        <p>Nature scene</p>
+    </div>
+    <div class="my-avatar">
+        <img src="http://www.annaakullian.com/static/images/yoga.jpg">
+    </div>
+    <div>
+        <p class="user-name">Anna Akullian</p>
+        <p class="p-board-category">Nature</p>
+    </div>
+</div>
+<div class='my-card'>
+    <img class="my-image" 
+        src="https://s-media-cache-ak0.pinimg.com/236x/7c/5d/86/7c5d86128f6cf83a60c562d86e18f32c.jpg">
+    <div class="my-caption">
+        <p>Nature scene</p>
+    </div>
+    <div class="my-avatar">
+        <img src="http://www.annaakullian.com/static/images/yoga.jpg">
+    </div>
+    <div>
+        <p class="user-name">Anna Akullian</p>
+        <p class="p-board-category">Nature</p>
+    </div>
+</div>
