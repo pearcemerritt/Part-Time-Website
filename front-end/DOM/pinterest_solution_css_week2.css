@@ -1,0 +1,98 @@
+body {
+    background-color: #E9E9E9; 
+}
+
+.grid-container {
+    width: 100%;
+    max-width: 1250px;
+    padding-left: 12px;
+    padding-right: 6px;
+}
+
+
+.grid-container *{
+    box-sizing: border-box; 
+}
+
+.start-images {
+    padding-top: 60px;
+}
+
+.col-5 {
+    float: left;
+    min-height: 1px; 
+    width: 20%; 
+    padding-left: 12px;
+}
+
+.my-image {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    margin-bottom: -10px;
+}
+
+
+.p-textbox {
+    background-color: white;
+    padding: 0;
+    margin: 5px;
+}
+
+.my-card img {
+    height: 100%;
+}
+
+.my-card{
+    float: left;
+    margin-bottom: 13px;
+    border-radius: 10px;
+    background-color: #fff;
+    color: #333333;
+    box-shadow: 0 1px 2px #999999;
+    opacity: 1;
+    overflow: hidden;
+    padding-top: 0px;
+}
+
+
+.my-avatar img{
+    width: 40px;
+    height: 40px;
+    margin-left: 5px;
+    margin-right: 10px;
+    margin-top: 3px;
+    float: left;
+    border-radius: 30px; 
+  }
+
+.user-name {
+    line-height: 15px;
+    font-size: 10px;
+    font-family: 'Helvetica Neue';
+    color: #9494B8;
+}
+
+.p-board-category {
+    background-color: white;
+    padding-bottom: 5px;
+    margin-top: -10px;
+    display: inline-block;
+    float: left;
+    text-transform: uppercase;
+    line-height: 15px;
+    font-size: 10px;
+    font-family: 'Helvetica Neue';
+    font-weight: 500;
+    margin-left: 5px;
+}
+
+.my-caption {
+    border-bottom: 1px solid #E0E0E0; 
+    margin-top: 15px; 
+    padding-left: 10px;
+    font-family: 'Helvetica Neue';
+    font-size: 13px;
+}
+
