@@ -1,0 +1,557 @@
+
+
+
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <!--<title>JQuery &mdash; Hackbright Fellowship</title>-->
+  <title>JQuery</title>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+  <link rel="stylesheet" href="static/revealjs/css/reveal.css"/>
+  <link rel="stylesheet" href="static/revealjs/css/theme/white.css" id="theme"/>
+  <link rel="stylesheet" href="static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="static/hackbright.css"/>
+
+</head>
+<body>
+<div class="reveal">
+  <footer id="slide-footer">
+  </footer>
+
+  <div class="slides">
+    <section>
+      <h2>JQuery</h2>
+      <div class="event"></div>
+    </section>
+
+    
+  <section id="simplifying-interactive-web-pages">
+<section>
+<h2>Simplifying Interactive Web Pages</h2>
+</section><section id="learning-objectives">
+<h3>Learning Objectives</h3>
+<div class="container">
+<ul class="simple">
+<li class="fragment">I can tell someone what jQuery <em>is</em>.</li>
+<li class="fragment">With the help of docs, I can hide an element using jQuery.</li>
+<li class="fragment">With the help of docs, I can schedule an &#8220;on click&#8221; event using
+jQuery.</li>
+</ul>
+</div>
+</section><section id="what-is-jquery">
+<h3>What is jQuery?</h3>
+<div class="container">
+<ul class="simple">
+<li class="fragment">A <em>set of alternatives</em> to the built-in JavaScript methods for
+manipulating the DOM in a web page.</li>
+<li class="fragment">A library that is extremely popular due to the simplicity it provides.</li>
+</ul>
+</div>
+</section></section><section id="review">
+<section>
+<h2>Review</h2>
+</section><section id="what-is-a-specific-use-case-for-javascript">
+<h3>What is a <em>specific use case</em> for JavaScript?</h3>
+<p>Change a CSS class when a user clicks something.</p>
+<div class="fragment container">
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">myElement</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;#my-special-paragraph&#39;</span><span class="p">);</span>
+
+<span class="nx">myElement</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="nx">changeTextColor</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</section><section id="what-is-a-generalized-use-case-for-javascript">
+<h3>What is a <em>generalized use case</em> for JavaScript?</h3>
+<div class="fragment container">
+To provide a set of rules that guide the behavior of a webpage.</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+<div class="fragment container">
+<ul class="simple">
+<li>My navigation links should change a color when the user mouses over them.</li>
+<li>If the user tries to submit an empty form, they should be prompted to fill
+the form correctly.</li>
+<li>Clicking on an <code class="docutils literal"><span class="pre">&lt;img&gt;</span></code> tag should make the image larger.</li>
+</ul>
+</div>
+</section><section id="new-what-is-a-specific-use-case-for-jquery">
+<h3>New: What is a <em>specific use case</em> for jQuery?</h3>
+<div class="fragment container">
+Change a CSS class when a user clicks something.</div>
+</section><section id="new-what-is-the-generalized-use-case-for-jquery">
+<h3>New: What is the <em>generalized use case</em> for jQuery?</h3>
+<div class="fragment container">
+To provide a set of rules that guide the behavior of a webpage.</div>
+</section></section><section id="why-jquery">
+<section>
+<h2>Why JQuery?</h2>
+</section><section id="jquery-is-here-to-stay">
+<h3>JQuery is here to stay</h3>
+<div class="container">
+<ul class="simple">
+<li class="fragment">cross-platform</li>
+<li class="fragment">lovely syntax</li>
+<li class="fragment">it&#8217;s a marketable skill</li>
+<li class="fragment">58% of the top 10,000 websites use jQuery</li>
+<li class="fragment">source: <a class="reference external" href="http://trends.builtwith.com/javascript/jQuery">http://trends.builtwith.com/javascript/jQuery</a></li>
+</ul>
+</div>
+</section><section id="something-like-this-in-javascript">
+<h3>Something like this in JavaScript...</h3>
+<p>Get all links in books and add the class <cite>important</cite>:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">books</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByClass</span><span class="p">(</span><span class="s2">&quot;book&quot;</span><span class="p">);</span>
+<span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">books</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">links</span> <span class="o">=</span> <span class="nx">books</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">);</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">j</span> <span class="o">&lt;</span> <span class="nx">links</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">links</span><span class="p">[</span><span class="nx">j</span><span class="p">].</span><span class="nx">classList</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s2">&quot;important&quot;</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section><section id="is-much-simpler-in-jquery">
+<h3>...Is much simpler in jQuery</h3>
+<div class="fragment container">
+This is also JavaScript</div>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;.book a&quot;</span><span class="p">).</span><span class="nx">addClass</span><span class="p">(</span><span class="s2">&quot;important&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</section><section id="direct-comparison">
+<h3>Direct Comparison</h3>
+<div class="compare container">
+<div class="highlight-javascript"><div class="highlight"><pre><span class="c1">// Plain Javascript</span>
+
+<span class="kd">var</span> <span class="nx">books</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByClass</span><span class="p">(</span><span class="s2">&quot;book&quot;</span><span class="p">);</span>
+<span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">books</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">links</span> <span class="o">=</span> <span class="nx">books</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">);</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">j</span> <span class="o">&lt;</span> <span class="nx">links</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">links</span><span class="p">[</span><span class="nx">j</span><span class="p">].</span><span class="nx">classList</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s2">&quot;important&quot;</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="c1">// JQuery (still JavaScript)</span>
+
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;.book a&quot;</span><span class="p">).</span><span class="nx">addClass</span><span class="p">(</span><span class="s2">&quot;important&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</section></section><section id="basic-jquery-syntax">
+<section>
+<h2>Basic jQuery Syntax</h2>
+</section><section id="getting-an-element">
+<h3>Getting an element</h3>
+<p>jQuery element(s) = dollar sign + selector string in parentheses</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">allImages</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;img&#39;</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">myBio</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#bio&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</section><section id="basic-anatomy-of-a-jquery-expression">
+<h3>Basic Anatomy of a JQuery expression</h3>
+<img alt="images/anatomy.png" src="images/anatomy.png" />
+</section><section id="basic-anatomy-of-jquery-cont">
+<h3>Basic Anatomy of JQuery, cont.</h3>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#bio&#39;</span><span class="p">).</span><span class="nx">addClass</span><span class="p">(</span><span class="s1">&#39;gray-background&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+<div class="container">
+<ul class="simple">
+<li class="fragment">The dollar sign is a shortcut for the function <code class="docutils literal"><span class="pre">jQuery()</span></code>.</li>
+<li class="fragment">Is there a space after the dollar sign?<ul>
+<li class="fragment">No!</li>
+</ul>
+</li>
+<li class="fragment">Are there quotes around the selector?<ul>
+<li class="fragment">Yes! It is a selector <em>string</em>.</li>
+</ul>
+</li>
+<li class="fragment">As you learn more CSS selectors, you will also be improving your jQuery
+selector syntax. Woot!</li>
+</ul>
+</div>
+</section><section id="prevent-confusion-later-learn-the-important-selectors">
+<h3>Prevent Confusion Later: Learn the Important Selectors</h3>
+<div class="container">
+<ul class="simple">
+<li class="fragment"><code class="docutils literal"><span class="pre">$('.urgent')</span></code><ul>
+<li class="fragment">select all elements that have the class &#8220;urgent&#8221;</li>
+</ul>
+</li>
+<li class="fragment"><code class="docutils literal"><span class="pre">$('#bio')</span></code><ul>
+<li class="fragment">select the <em>single</em> element with the id &#8220;bio&#8221;</li>
+</ul>
+</li>
+<li class="fragment"><code class="docutils literal"><span class="pre">$('div')</span></code><ul>
+<li class="fragment">select all the divs</li>
+</ul>
+</li>
+<li class="fragment"><code class="docutils literal"><span class="pre">$('div.urgent')</span></code><ul>
+<li class="fragment">select the div with the class urgent</li>
+</ul>
+</li>
+<li class="fragment"><code class="docutils literal"><span class="pre">$('footer</span> <span class="pre">a.fancy')</span></code><ul>
+<li class="fragment">select all links with the class fancy that are <em>inside</em> the footer</li>
+</ul>
+</li>
+</ul>
+</div>
+</section><section id="an-acronym-to-remember-jquery-expressions">
+<h3>An Acronym to Remember JQuery Expressions</h3>
+<p><strong>D</strong>octor <strong>S</strong>mith <strong>D</strong>oesn&#8217;t <strong>M</strong>ake <strong>P</strong>retty <strong>S</strong>nowmen</p>
+<div class="container">
+<ul class="simple">
+<li class="fragment">Dollar sign</li>
+<li class="fragment">Selector</li>
+<li class="fragment">Dot</li>
+<li class="fragment">Method</li>
+<li class="fragment">Parameter</li>
+<li class="fragment">Semicolon</li>
+</ul>
+</div>
+<div class="fragment container">
+<img alt="images/snowmen.png" src="images/snowmen.png" />
+</div>
+</section></section><section id="jquery-setup">
+<section>
+<h2>jQuery Setup</h2>
+</section><section id="where-does-jquery-come-from">
+<h3>Where does jQuery come from?</h3>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;https://code.jquery.com/jquery.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>Always include this line <em>before</em> any jQuery code needs to be evaluated</li>
+<li>At Hackbright, please put this inside the <code class="docutils literal"><span class="pre">&lt;head&gt;</span></code> tag</li>
+</ul>
+</section><section id="where-does-my-jquery-code-go">
+<h3>Where does <em>my</em> jQuery code go?</h3>
+<ul class="simple">
+<li>Save jQuery code that you write with a <code class="docutils literal"><span class="pre">.js</span></code> file extension.</li>
+<li>Include another script tag for <em>your</em> <code class="docutils literal"><span class="pre">.js</span></code>
+file <strong>after</strong> the jQuery script tag</li>
+</ul>
+</section><section id="an-html-doc">
+<h3>An HTML Doc</h3>
+<div class="highlight-html"><div class="highlight"><pre><span class="cp">&lt;!doctype html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+
+  <span class="nt">&lt;head&gt;</span>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <span class="nt">&lt;/head&gt;</span>
+
+  <span class="nt">&lt;body&gt;</span>
+
+
+
+  <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</pre></div>
+</div>
+</section><section id="id1">
+<h3>An HTML Doc</h3>
+<div class="highlight-html"><div class="highlight"><pre><span class="cp">&lt;!doctype html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+
+  <span class="nt">&lt;head&gt;</span>
+
+
+
+
+<span class="hll">    <span class="c">&lt;!-- CSS HERE --&gt;</span>
+</span>
+
+
+<span class="hll">    <span class="c">&lt;!-- JAVASCRIPT HERE --&gt;</span>
+</span>
+
+
+
+  <span class="nt">&lt;/head&gt;</span>
+
+  <span class="nt">&lt;body&gt;</span>
+
+<span class="hll">    <span class="c">&lt;!-- HTML HERE --&gt;</span>
+</span>
+  <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</pre></div>
+</div>
+</section><section id="id2">
+<h3>An HTML Doc</h3>
+<div class="highlight-html"><div class="highlight"><pre><span class="cp">&lt;!doctype html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+
+  <span class="nt">&lt;head&gt;</span>
+<span class="hll">
+</span><span class="hll">    <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href=</span><span class="s">&quot;stylesheet.css&quot;</span><span class="nt">&gt;</span>
+</span><span class="hll">
+</span><span class="hll">    <span class="nt">&lt;style&gt;</span>
+</span><span class="hll">      <span class="nc">.fancy</span> <span class="p">{</span> <span class="k">color</span><span class="o">:</span> <span class="nb">pink</span><span class="p">;</span> <span class="k">display</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span> <span class="p">}</span>
+</span><span class="hll">     <span class="nt">&lt;/style&gt;</span>
+</span><span class="hll">
+</span><span class="hll">    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;http://code.jquery.com/jquery.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+</span><span class="hll">
+</span><span class="hll">  <span class="nt">&lt;/head&gt;</span>
+</span><span class="hll">
+</span><span class="hll">  <span class="nt">&lt;body&gt;</span>
+</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;fancy&quot;</span><span class="nt">&gt;</span>I&#39;m fancy!<span class="nt">&lt;/div&gt;</span>
+
+    <span class="nt">&lt;script&gt;</span>
+      <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;.fancy&quot;</span><span class="p">).</span><span class="nx">show</span><span class="p">();</span>
+<span class="hll">    <span class="nt">&lt;/script&gt;</span>
+</span>
+  <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</pre></div>
+</div>
+</section></section><section id="methods-for-changing-the-dom">
+<section>
+<h2>Methods for Changing the DOM</h2>
+</section><section id="changing-css-classes">
+<h3>Changing CSS Classes</h3>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;section&quot;</span><span class="p">).</span><span class="nx">addClass</span><span class="p">(</span><span class="s2">&quot;important&quot;</span><span class="p">);</span>      <span class="c1">// no error if already there</span>
+
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;section&quot;</span><span class="p">).</span><span class="nx">hasClass</span><span class="p">(</span><span class="s2">&quot;important&quot;</span><span class="p">);</span>      <span class="c1">// returns true or false</span>
+
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;section&quot;</span><span class="p">).</span><span class="nx">removeClass</span><span class="p">(</span><span class="s2">&quot;important&quot;</span><span class="p">);</span>   <span class="c1">// no error if not there</span>
+
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;section&quot;</span><span class="p">).</span><span class="nx">toggleClass</span><span class="p">(</span><span class="s2">&quot;important&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</section><section id="changing-html-attributes">
+<h3>Changing HTML Attributes</h3>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;img#cat&quot;</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;src&quot;</span><span class="p">);</span>              <span class="c1">// returns src attribute</span>
+
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;img#cat&quot;</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;src&quot;</span><span class="p">,</span> <span class="s2">&quot;cat.jpg&quot;</span><span class="p">);</span> <span class="c1">// add or change</span>
+</pre></div>
+</div>
+</section><section id="inserting-html-elements">
+<h3>Inserting HTML Elements</h3>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;div&gt;</span>
+  <span class="nt">&lt;p&gt;</span>Existing Text.<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>the prepend() method adds to the top of the content of the element;</li>
+<li>the append() method adds to the bottom of the content of the element.</li>
+</ul>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">prepend</span><span class="p">(</span><span class="s2">&quot;Hello &quot;</span><span class="p">);</span>
+
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="s2">&quot; The End!&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</section><section id="id3">
+<h3>Inserting HTML Elements</h3>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;div&gt;</span>
+  <span class="nt">&lt;p&gt;</span>Existing Text. The End!<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></div>
+</div>
+</section><section id="changing-contents-of-existing-html-elements">
+<h3>Changing Contents of Existing HTML Elements</h3>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;section&quot;</span><span class="p">).</span><span class="nx">html</span><span class="p">();</span>         <span class="c1">// returns HTML</span>
+
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;section&quot;</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="s2">&quot;Hi&quot;</span><span class="p">);</span>     <span class="c1">// sets HTML</span>
+</pre></div>
+</div>
+</section><section id="removing-html-elements">
+<h3>Removing HTML Elements</h3>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;section&quot;</span><span class="p">).</span><span class="nx">empty</span><span class="p">();</span>    <span class="c1">// remove children</span>
+
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;section&quot;</span><span class="p">).</span><span class="nx">remove</span><span class="p">();</span>   <span class="c1">// remove this element + children</span>
+</pre></div>
+</div>
+</section><section id="showing-hiding-elements">
+<h3>Showing/Hiding Elements</h3>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;img&quot;</span><span class="p">).</span><span class="nx">hide</span><span class="p">();</span>
+
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;img&quot;</span><span class="p">).</span><span class="nx">show</span><span class="p">();</span>
+
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;img&quot;</span><span class="p">).</span><span class="nx">toggle</span><span class="p">();</span>
+</pre></div>
+</div>
+</section></section><section id="animation-methods">
+<section>
+<h2>Animation Methods</h2>
+</section><section id="shrinking-and-growing-elements">
+<h3>Shrinking and Growing Elements</h3>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;img&quot;</span><span class="p">).</span><span class="nx">slideUp</span><span class="p">();</span>       <span class="c1">// shrink into nothing in position</span>
+
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;img&quot;</span><span class="p">).</span><span class="nx">slideDown</span><span class="p">();</span>     <span class="c1">// grow into itself in position</span>
+
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;img&quot;</span><span class="p">).</span><span class="nx">slideToggle</span><span class="p">();</span>   <span class="c1">// toggles via sliding</span>
+</pre></div>
+</div>
+</section><section id="other-animations">
+<h3>Other Animations</h3>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">fadeIn()</span></code></li>
+<li><code class="docutils literal"><span class="pre">fadeOut()</span></code></li>
+<li><code class="docutils literal"><span class="pre">fadeToggle()</span></code></li>
+</ul>
+<div class="fragment container">
+<ul class="simple">
+<li>many many more</li>
+</ul>
+</div>
+</section><section id="speed-of-animation">
+<h3>Speed of Animation</h3>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;img&quot;</span><span class="p">).</span><span class="nx">slideUp</span><span class="p">(</span><span class="mi">3000</span><span class="p">);</span>      <span class="c1">// milliseconds (3 secs)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>The first param is the amount of time the animation should take to
+complete<ul>
+<li>If you omit, slideUp and slideDown default to 400ms</li>
+</ul>
+</li>
+</ul>
+</section><section id="a-note-on-chaining-methods">
+<h3>A note on chaining methods</h3>
+<p>Is the following jQuery code allowed?</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;img#cat&quot;</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;src&quot;</span><span class="p">,</span> <span class="s2">&quot;cat.jpg&quot;</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;height&quot;</span><span class="p">,</span> <span class="mi">500</span><span class="p">);</span>
+</pre></div>
+</div>
+</section></section><section id="event-listeners">
+<section>
+<h2>Event Listeners</h2>
+</section><section id="what-is-an-event-listener">
+<h3>What is an event listener?</h3>
+<div class="container">
+<ul class="simple">
+<li class="fragment">A list of what will happen when a user interacts with an HTML element
+(or a group of HTML elements)</li>
+<li class="fragment">We as programmers need to specify<ul>
+<li class="fragment">the catalyst element</li>
+<li class="fragment">the type of event being handled</li>
+<li class="fragment">what will happen.</li>
+</ul>
+</li>
+</ul>
+</div>
+</section><section id="two-ways-to-schedule-an-on-click-event">
+<h3>Two Ways to Schedule an On Click Event</h3>
+<div class="compare container">
+<div class="highlight-javascript"><div class="highlight"><pre><span class="c1">// click event in Plain JavaScript</span>
+
+<span class="kd">var</span> <span class="nx">myBtn</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;special-btn&#39;</span><span class="p">);</span>
+
+<span class="nx">myBtn</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="nx">alertMe</span><span class="p">);</span>
+</pre></div>
+</div>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="c1">// click event in JavaScript using JQuery</span>
+
+<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#special-btn&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="nx">alertMe</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="fragment container">
+<p>My helper function (no JQuery here):</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">function</span> <span class="nx">alertMe</span><span class="p">(</span><span class="nx">evt</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Don&#39;t click that, please.&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</section><section id="other-event-types">
+<h3>Other event types</h3>
+<div class="fragment container">
+Just like in JavaScript!</div>
+<ul class="simple">
+<li>mouseover <code class="docutils literal"><span class="pre">$('#special-btn').on('mouseover',</span> <span class="pre">alertMe);</span></code></li>
+<li>change  <code class="docutils literal"><span class="pre">$('input').on('change',</span> <span class="pre">alertMe);</span></code></li>
+<li>submit  <code class="docutils literal"><span class="pre">$('form').on('submit',</span> <span class="pre">alertMe);</span></code></li>
+<li>keypress  <code class="docutils literal"><span class="pre">$('input').on('keypress',</span> <span class="pre">alertMe);</span></code></li>
+</ul>
+</section></section><section id="practice">
+<section>
+<h2>Practice</h2>
+</section><section id="practice-1">
+<h3>Practice 1</h3>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;img</span> <span class="na">id=</span><span class="s">&quot;cat&quot;</span> <span class="na">src=</span><span class="s">&quot;cat.jpg&quot;</span> <span class="na">alt=</span><span class="s">&quot;A cute kitten&quot;</span><span class="nt">&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-css"><div class="highlight"><pre><span class="nc">.special-border</span> <span class="p">{</span>
+    <span class="k">border-color</span><span class="o">:</span> <span class="nb">green</span><span class="p">;</span>
+    <span class="k">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">4px</span><span class="p">;</span>
+    <span class="k">border-style</span><span class="o">:</span> <span class="k">solid</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#cat&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;mouseover&quot;</span><span class="p">,</span> <span class="nx">showBorderOnKitten</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Helper function (there is JQuery here):</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">function</span> <span class="nx">showBorderOnKitten</span><span class="p">(</span><span class="nx">evt</span><span class="p">)</span> <span class="p">{</span>
+
+  <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;img#cat&quot;</span><span class="p">).</span><span class="nx">addClass</span><span class="p">(</span><span class="s2">&quot;special-border&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section><section id="practice-2">
+<h3>Practice 2</h3>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;.trigger-alert&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;change&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">evt</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Don&#39;t do that, please.&quot;</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+</section></section><section id="in-conclusion">
+<section>
+<h2>In Conclusion</h2>
+</section><section id="how-to-debug-jquery">
+<h3>How to debug jQuery</h3>
+<ul class="simple">
+<li>Check the order of your script tags</li>
+<li>Check your syntax</li>
+<li>Read the jQuery docs on the thing you&#8217;re trying to do</li>
+</ul>
+</section><section id="coming-up">
+<h3>Coming Up</h3>
+<p>-exercise time!</p>
+</section></section><section id="fin">
+<section>
+<h2>FIN</h2>
+</section></section>
+
+
+  </div>
+</div>
+
+<script src="static/revealjs/lib/js/head.min.js"></script>
+<script src="static/revealjs/js/reveal.js"></script>
+<script>
+  Reveal.initialize({
+    maxScale: 5,
+    width: 1280,
+    height: 800,
+    dependencies: [
+          { src: "static/revealjs/plugin/zoom-js/zoom.js", async: true },
+          { src: "static/revealjs/plugin/notes/notes.js", async: true },
+    ]
+  });
+</script>
+
+</body>
+</html>

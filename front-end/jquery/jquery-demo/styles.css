@@ -1,0 +1,98 @@
+body {
+    font-family: sans-serif;
+}
+
+#status { 
+    border: solid 1px black;
+    padding: 0.5em 0 0 1em;
+    height: 2.5em;
+    margin-top: 1em;
+    position: absolute;
+    left: 230px;
+    top: 70px;
+    width: 11em;
+}
+#status:before {
+    content: "#status";
+    display: block;
+    font-size: 50%;
+    background-color: navy;
+    padding: 0.3em;
+    width: 4.5em;
+    font-weight: bold;
+    color: white;
+}
+
+#special-button {
+    position: absolute;
+    top: 150px;
+    left: 230px;
+    background-color: darkgreen;
+    color: white;
+}
+#special-button:before {
+    content: "#special-button";
+    display: block;
+    font-size: 50%;
+    background-color: navy;
+    padding: 0.3em;
+    width: 10em;
+    font-weight: bold;
+    color: white;
+}
+
+.important {
+    color: red;
+}
+
+section {
+    padding: 0.1em 0 0.1em 0.5em;
+    background-color: lightblue;
+    position: absolute;
+    left: 450px;
+    top: 10px;
+    width: 10em;
+}
+section:before {
+    content: "section";
+    display: block;
+    font-size: 50%;
+    background-color: navy;
+    padding: 0.3em;
+    width: 4.5em;
+    font-weight: bold;
+    color: white;
+    margin-top: 0.6em;
+}
+
+form {
+    position: absolute;
+    left: 230px;
+    top: 10px;
+}
+form:before {
+    content: "form \00A0\00A0\00A0  #color-field";
+    display: block;
+    font-size: 50%;
+    background-color: navy;
+    padding: 0.3em;
+    width: 10em;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 0.6em;
+}
+
+input:disabled {
+    color: lightgrey;
+}
+
+.special-border {
+    border-color: green;
+    border-radius: 4px;
+    border-style: solid;
+}
+
+.fancy {
+    color: pink;
+    display: none;
+}
