@@ -26,11 +26,45 @@
 
 <script>
 
-    // Set the variable to its DOM elements
+   <script>
 
-    var myImage;
+    // Step 1: Set these variables to their DOM elements
 
-    
+    var myImage = document.getElementById("coffee_image");
+
+    // Step 1: Initialize the image to "coffee_beans.jpg"
+    myImage.setAttribute('src', "static/coffee_beans.jpg");
+
+    // Step 2: Add an event listener to the image that on a click will call make_coffee
+    myImage.addEventListener('click', function () {
+        return makeCoffee("brew");
+    });
+
+    // Step 2: Create a function called make_coffee that changes the image to coffee_mug.jpg
+    //
+    // function makeCoffee(){
+    //     myImage.setAttribute('src', "coffee_mug.jpg");
+    // }
+
+    // Step 3: Change the make_coffee function to first display coffee_machine.jpg for 500 ms,
+    // and to then display coffee_mug.jpg (this just involves adding 1 line to your code)
+    //
+    // function makeCoffee(){
+    //     myImage.setAttribute('src', "coffee_machine2.jpg");
+    //     setTimeout(function() { myImage.setAttribute('src', "coffee_mug.jpg"); }, 500);
+    // }
+
+    // Step 4: Change the makeCoffee function to first display coffee_machine.jpg for 1000 ms,
+    // to then display coffee_mug.jpg for 1500 ms, and then to display coffee_beans.jpg
+    // (this just involves adding 1 line to your code)
+    //
+    function makeCoffee() {
+         myImage.setAttribute('src', "static/coffee_machine.jpg");
+         setTimeout(function() { myImage.setAttribute('src', "static/coffee_mug.jpg"); }, 500);
+         setTimeout(function() { myImage.setAttribute('src', "static/coffee_beans.jpg"); }, 1500);
+    }
+
+</script>
 
 </script>
 
