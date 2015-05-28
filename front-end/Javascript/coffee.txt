@@ -37,7 +37,7 @@
 
     // Step 2: Add an event listener to the image that on a click will call make_coffee
     myImage.addEventListener('click', function () {
-        return makeCoffee("brew");
+        return makeCoffee();
     });
 
     // Step 2: Create a function called make_coffee that changes the image to coffee_mug.jpg
