@@ -1,0 +1,8 @@
+installing pip
+- visit https://pip.pypa.io/en/latest/installing.html
+- right click the get-pip.py link, choose save link as, & save to your Desktop
+- run the script using Python
+  - $ python get-pip.py
+
+installing flask
+- $ pip install flask
