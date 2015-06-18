@@ -1,0 +1,295 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>GitHub: Version Control in the Cloud</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="static/hackbright.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Hackbright Fellowship" href="#"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+          <p class="project">Hackbright Fellowship Spring 2015</p>
+          <a href="#">GitHub: Version Control in the Cloud</a>
+        
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">GitHub: Version Control in the Cloud</a><ul>
+<li><a class="reference internal" href="#using-github">Using GitHub</a><ul>
+<li><a class="reference internal" href="#how-github-is-normally-used">How GitHub Is Normally Used</a></li>
+<li><a class="reference internal" href="#how-we-ll-use-github-at-hackbright">How We&#8217;ll Use GitHub at Hackbright</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#version-control-in-the-cloud">Version Control in the Cloud</a><ul>
+<li><a class="reference internal" href="#why-do-we-use-version-control">Why Do We Use Version Control?</a></li>
+<li><a class="reference internal" href="#git-is-a-program-github-is-a-company">Git is a program, GitHub is a company</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#example-time">Example time!</a><ul>
+<li><a class="reference internal" href="#step-1-log-in-to-your-github-account">Step 1: Log in to your GitHub account</a></li>
+<li><a class="reference internal" href="#step-2-create-a-new-repo">Step 2: Create a new repo</a></li>
+<li><a class="reference internal" href="#step-3-give-it-a-name">Step 3: Give it a name</a></li>
+<li><a class="reference internal" href="#rinse-repeat">Rinse. Repeat.</a></li>
+<li><a class="reference internal" href="#step-4-connect-your-new-remote">Step 4: Connect your new remote</a></li>
+<li><a class="reference internal" href="#step-5-keep-working">Step 5: Keep Working!</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#woohoo-it-worked-now-what">Woohoo! It worked! Now What?</a><ul>
+<li><a class="reference internal" href="#let-s-look-around">Let&#8217;s look around</a></li>
+<li><a class="reference internal" href="#clone-it-to-a-new-location">Clone it to a new location</a></li>
+<li><a class="reference internal" href="#gotchas">Gotchas</a></li>
+<li><a class="reference internal" href="#editing-files-on-github">Editing files on GitHub</a></li>
+<li><a class="reference internal" href="#congratulations">Congratulations!</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="#">GitHub: Version Control in the Cloud</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+          <div role="main" class="document">
+            
+  <div class="section" id="github-version-control-in-the-cloud">
+<h1>GitHub: Version Control in the Cloud<a class="headerlink" href="#github-version-control-in-the-cloud" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="using-github">
+<h2>Using GitHub<a class="headerlink" href="#using-github" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="how-github-is-normally-used">
+<h3>How GitHub Is Normally Used<a class="headerlink" href="#how-github-is-normally-used" title="Permalink to this headline">¶</a></h3>
+<p class="graphviz">
+
+            <object data="images/graphviz-266087c7996f5c8bfe54553518a256cb71b24340.svg" type="image/svg+xml" images/graphviz-266087c7996f5c8bfe54553518a256cb71b24340.svg>
+              <embed src="" type="image/svg+xml" />
+            </object>
+            </p>
+<ul class="simple">
+<li>Many developers working on the same project</li>
+<li>Each in a distinct working directory (on a distinct laptop)</li>
+</ul>
+</div>
+<div class="section" id="how-we-ll-use-github-at-hackbright">
+<h3>How We&#8217;ll Use GitHub at Hackbright<a class="headerlink" href="#how-we-ll-use-github-at-hackbright" title="Permalink to this headline">¶</a></h3>
+<p class="graphviz">
+
+            <object data="images/graphviz-6e94fc2a99cb8aec60fb1f5c6c5e56f89fbdb37e.svg" type="image/svg+xml" images/graphviz-6e94fc2a99cb8aec60fb1f5c6c5e56f89fbdb37e.svg>
+              <embed src="" type="image/svg+xml" />
+            </object>
+            </p>
+<ul class="simple">
+<li>One working directory (paired workstation!)</li>
+<li>You both want to have in your own GitHub</li>
+</ul>
+</div>
+</div>
+<div class="section" id="version-control-in-the-cloud">
+<h2>Version Control in the Cloud<a class="headerlink" href="#version-control-in-the-cloud" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="why-do-we-use-version-control">
+<h3>Why Do We Use Version Control?<a class="headerlink" href="#why-do-we-use-version-control" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Track changes</li>
+<li>Look at older revisions</li>
+<li>Revert to early revision</li>
+<li>Share code/collaborate easily</li>
+<li class="fragment"><span>Save your bacon when you break something</span></li>
+</ul>
+</div>
+<div class="section" id="git-is-a-program-github-is-a-company">
+<h3>Git is a program, GitHub is a company<a class="headerlink" href="#git-is-a-program-github-is-a-company" title="Permalink to this headline">¶</a></h3>
+<p>If you take nothing else away from this, make it that.</p>
+<p>GitHub is website that allows you to store your local repository in the cloud.</p>
+<p>In order to put your local repository in the cloud, you need to make a &#8220;remote&#8221;.</p>
+</div>
+</div>
+<div class="section" id="example-time">
+<h2>Example time!<a class="headerlink" href="#example-time" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="step-1-log-in-to-your-github-account">
+<h3>Step 1: Log in to your GitHub account<a class="headerlink" href="#step-1-log-in-to-your-github-account" title="Permalink to this headline">¶</a></h3>
+<p>and go to the Repositories tab</p>
+<img alt="images/repo_tab.png" src="images/repo_tab.png" />
+</div>
+<div class="section" id="step-2-create-a-new-repo">
+<h3>Step 2: Create a new repo<a class="headerlink" href="#step-2-create-a-new-repo" title="Permalink to this headline">¶</a></h3>
+<img alt="images/new.png" src="images/new.png" />
+</div>
+<div class="section" id="step-3-give-it-a-name">
+<h3>Step 3: Give it a name<a class="headerlink" href="#step-3-give-it-a-name" title="Permalink to this headline">¶</a></h3>
+<img alt="images/create_new.png" src="images/create_new.png" />
+</div>
+<div class="section" id="rinse-repeat">
+<h3>Rinse. Repeat.<a class="headerlink" href="#rinse-repeat" title="Permalink to this headline">¶</a></h3>
+<p>Do this for both members of your pair before you move on. An incognito window
+is great for logging in to both GitHub accounts at the same time.</p>
+</div>
+<div class="section" id="step-4-connect-your-new-remote">
+<h3>Step 4: Connect your new remote<a class="headerlink" href="#step-4-connect-your-new-remote" title="Permalink to this headline">¶</a></h3>
+<img alt="images/push_existing.png" src="images/push_existing.png" />
+<p>Because we are sharing one local repo to two remotes, use your GitHub login instead of &#8220;origin&#8221;.</p>
+<pre class="console literal-block">
+$ <span class="cmd">git remote add cdueltgen https://github.com/cdueltgen/ex01.git</span>
+$ <span class="cmd">git remote add joelburton https://github.com/joelburton/exercise01.git</span>
+$ <span class="cmd">git push cdueltgen master</span>
+$ <span class="cmd">git push joelburton master</span>
+</pre>
+</div>
+<div class="section" id="step-5-keep-working">
+<h3>Step 5: Keep Working!<a class="headerlink" href="#step-5-keep-working" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Push will push ALL your commits to the remote</li>
+<li>Push when you&#8217;re going to be away from your computer</li>
+<li>Push when you need to move to a different computer</li>
+</ul>
+</div>
+</div>
+<div class="section" id="woohoo-it-worked-now-what">
+<h2>Woohoo! It worked! Now What?<a class="headerlink" href="#woohoo-it-worked-now-what" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="let-s-look-around">
+<h3>Let&#8217;s look around<a class="headerlink" href="#let-s-look-around" title="Permalink to this headline">¶</a></h3>
+<img alt="images/on_github.png" src="images/on_github.png" />
+</div>
+<div class="section" id="clone-it-to-a-new-location">
+<h3>Clone it to a new location<a class="headerlink" href="#clone-it-to-a-new-location" title="Permalink to this headline">¶</a></h3>
+<p>Look for the bit in the lower right that says &#8220;HTTPS clone URL&#8221; and hit the clipboard icon to copy it to your clipboard.</p>
+<pre class="console literal-block">
+$ <span class="cmd">git clone https://github.com/cdueltgen/Exercise01.git</span>
+</pre>
+<p>This will create a new Working Directory called, in this case, Exercise01.</p>
+</div>
+<div class="section" id="gotchas">
+<h3>Gotchas<a class="headerlink" href="#gotchas" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Don&#8217;t clone into an existing working directory (git status, amirite?)</li>
+<li>Only need to clone once in a given location</li>
+<li>git clone sets up the necessary remote for you, but calls it &#8220;origin&#8221;</li>
+<li>Your code is now public</li>
+</ul>
+<ul class="simple">
+<li>To check what git thinks the remote(s) is(are):</li>
+</ul>
+<pre class="console literal-block">
+$ <span class="cmd">git remote -v</span>
+</pre>
+</div>
+<div class="section" id="editing-files-on-github">
+<h3>Editing files on GitHub<a class="headerlink" href="#editing-files-on-github" title="Permalink to this headline">¶</a></h3>
+<p>BE CAREFUL!</p>
+<p>If you edit a file on GitHub (you clicked on that tempting green button that
+says &#8220;add a README&#8221;, didn&#8217;t you?), you must keep that in sync with your local
+copy (your Working Directory).</p>
+<p>Go to your local Working Directory and</p>
+<pre class="console literal-block">
+$ <span class="cmd">git pull</span>
+</pre>
+<p>Try not to edit code on GitHub. This can cause something called a Merge Conflict. Keep your local and remote in sync as much as possible.</p>
+</div>
+<div class="section" id="congratulations">
+<h3>Congratulations!<a class="headerlink" href="#congratulations" title="Permalink to this headline">¶</a></h3>
+<p>You are now a git and GitHub master. Go forth and git.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="static/jquery.js"></script>
+      <script type="text/javascript" src="static/underscore.js"></script>
+      <script type="text/javascript" src="static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,183 @@
+
+
+
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <!--<title>GitHub: Version Control in the Cloud &mdash; Hackbright Fellowship</title>-->
+  <title>GitHub: Version Control in the Cloud</title>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+  <link rel="stylesheet" href="static/revealjs/css/reveal.css"/>
+  <link rel="stylesheet" href="static/revealjs/css/theme/white.css" id="theme"/>
+  <link rel="stylesheet" href="static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="static/hackbright.css"/>
+
+</head>
+<body>
+<div class="reveal">
+  <footer id="slide-footer">
+  </footer>
+
+  <div class="slides">
+    <section>
+      <h2>GitHub: Version Control in the Cloud</h2>
+      <div class="event"></div>
+    </section>
+
+    
+  <section id="using-github">
+<section>
+<h2>Using GitHub</h2>
+</section><section id="how-github-is-normally-used">
+<h3>How GitHub Is Normally Used</h3>
+<p class="graphviz">
+
+            <object data="images/graphviz-b74357955b72430b50f66fb1671b7e3f69994a49.svg" type="image/svg+xml" images/graphviz-b74357955b72430b50f66fb1671b7e3f69994a49.svg>
+              <embed src="" type="image/svg+xml" />
+            </object>
+            </p>
+<ul class="simple">
+<li>Many developers working on the same project</li>
+<li>Each in a distinct working directory (on a distinct laptop)</li>
+</ul>
+</section><section id="how-we-ll-use-github-at-hackbright">
+<h3>How We&#8217;ll Use GitHub at Hackbright</h3>
+<p class="graphviz">
+
+            <object data="images/graphviz-f22a5b4aaa82fe323b7ab249d87852450bc3db4d.svg" type="image/svg+xml" images/graphviz-f22a5b4aaa82fe323b7ab249d87852450bc3db4d.svg>
+              <embed src="" type="image/svg+xml" />
+            </object>
+            </p>
+<ul class="simple">
+<li>One working directory (paired workstation!)</li>
+<li>You both want to have in your own GitHub</li>
+</ul>
+</section></section><section id="version-control-in-the-cloud">
+<section>
+<h2>Version Control in the Cloud</h2>
+</section><section id="why-do-we-use-version-control">
+<h3>Why Do We Use Version Control?</h3>
+<ul class="simple">
+<li>Track changes</li>
+<li>Look at older revisions</li>
+<li>Revert to early revision</li>
+<li>Share code/collaborate easily</li>
+<li class="fragment"><span>Save your bacon when you break something</span></li>
+</ul>
+</section><section id="git-is-a-program-github-is-a-company">
+<h3>Git is a program, GitHub is a company</h3>
+<p>If you take nothing else away from this, make it that.</p>
+</section><section id="id1">
+<h3>Git is a program, GitHub is a company</h3>
+<p>GitHub is website that allows you to store your local repository in the cloud.</p>
+</section><section id="id2">
+<h3>Git is a program, GitHub is a company</h3>
+<p>In order to put your local repository in the cloud, you need to make a &#8220;remote&#8221;.</p>
+</section></section><section id="example-time">
+<section>
+<h2>Example time!</h2>
+</section><section id="step-1-log-in-to-your-github-account">
+<h3>Step 1: Log in to your GitHub account</h3>
+<p>and go to the Repositories tab</p>
+<img alt="images/repo_tab.png" src="images/repo_tab.png" />
+</section><section id="step-2-create-a-new-repo">
+<h3>Step 2: Create a new repo</h3>
+<img alt="images/new.png" src="images/new.png" />
+</section><section id="step-3-give-it-a-name">
+<h3>Step 3: Give it a name</h3>
+<img alt="images/create_new.png" src="images/create_new.png" />
+</section><section id="rinse-repeat">
+<h3>Rinse. Repeat.</h3>
+<p>Do this for both members of your pair before you move on. An incognito window
+is great for logging in to both GitHub accounts at the same time.</p>
+</section><section id="step-4-connect-your-new-remote">
+<h3>Step 4: Connect your new remote</h3>
+<img alt="images/push_existing.png" src="images/push_existing.png" />
+</section><section id="id3">
+<h3>Step 4: Connect your new remote</h3>
+<p>Because we are sharing one local repo to two remotes, use your GitHub login instead of &#8220;origin&#8221;.</p>
+<pre class="console literal-block">
+$ <span class="cmd">git remote add cdueltgen https://github.com/cdueltgen/ex01.git</span>
+$ <span class="cmd">git remote add joelburton https://github.com/joelburton/exercise01.git</span>
+$ <span class="cmd">git push cdueltgen master</span>
+$ <span class="cmd">git push joelburton master</span>
+</pre>
+</section><section id="step-5-keep-working">
+<h3>Step 5: Keep Working!</h3>
+<ul class="simple">
+<li>Push will push ALL your commits to the remote</li>
+<li>Push when you&#8217;re going to be away from your computer</li>
+<li>Push when you need to move to a different computer</li>
+</ul>
+</section></section><section id="woohoo-it-worked-now-what">
+<section>
+<h2>Woohoo! It worked! Now What?</h2>
+</section><section id="let-s-look-around">
+<h3>Let&#8217;s look around</h3>
+<img alt="images/on_github.png" src="images/on_github.png" />
+</section><section id="clone-it-to-a-new-location">
+<h3>Clone it to a new location</h3>
+<p>Look for the bit in the lower right that says &#8220;HTTPS clone URL&#8221; and hit the clipboard icon to copy it to your clipboard.</p>
+<pre class="console literal-block">
+$ <span class="cmd">git clone https://github.com/cdueltgen/Exercise01.git</span>
+</pre>
+<p>This will create a new Working Directory called, in this case, Exercise01.</p>
+</section><section id="gotchas">
+<h3>Gotchas</h3>
+<ul class="simple">
+<li>Don&#8217;t clone into an existing working directory (git status, amirite?)</li>
+<li>Only need to clone once in a given location</li>
+<li>git clone sets up the necessary remote for you, but calls it &#8220;origin&#8221;</li>
+<li>Your code is now public</li>
+</ul>
+</section><section id="id4">
+<h3>Gotchas</h3>
+<ul class="simple">
+<li>To check what git thinks the remote(s) is(are):</li>
+</ul>
+<pre class="console literal-block">
+$ <span class="cmd">git remote -v</span>
+</pre>
+</section><section id="editing-files-on-github">
+<h3>Editing files on GitHub</h3>
+<p>BE CAREFUL!</p>
+<p>If you edit a file on GitHub (you clicked on that tempting green button that
+says &#8220;add a README&#8221;, didn&#8217;t you?), you must keep that in sync with your local
+copy (your Working Directory).</p>
+<p>Go to your local Working Directory and</p>
+<pre class="console literal-block">
+$ <span class="cmd">git pull</span>
+</pre>
+</section><section id="id5">
+<h3>Editing files on GitHub</h3>
+<p>Try not to edit code on GitHub. This can cause something called a Merge Conflict. Keep your local and remote in sync as much as possible.</p>
+</section><section id="congratulations">
+<h3>Congratulations!</h3>
+<p>You are now a git and GitHub master. Go forth and git.</p>
+</section></section>
+
+
+  </div>
+</div>
+
+<script src="static/revealjs/lib/js/head.min.js"></script>
+<script src="static/revealjs/js/reveal.js"></script>
+<script>
+  Reveal.initialize({
+    maxScale: 5,
+    width: 1280,
+    height: 800,
+    dependencies: [
+          { src: "static/revealjs/plugin/zoom-js/zoom.js", async: true },
+          { src: "static/revealjs/plugin/notes/notes.js", async: true },
+    ]
+  });
+</script>
+
+</body>
+</html>

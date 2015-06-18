@@ -1,0 +1,535 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Version Control with Git</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="static/hackbright.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Hackbright Intro to Programming" href="#"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+          <p class="project">Hackbright Intro to Programming Spring 2015</p>
+          <a href="#">Version Control with Git</a>
+        
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Version Control with Git</a><ul>
+<li><a class="reference internal" href="#version-control">Version Control</a><ul>
+<li><a class="reference internal" href="#what-is-version-control">What Is Version Control?</a></li>
+<li><a class="reference internal" href="#multiple-files">Multiple Files</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#git-intro">Git Intro</a><ul>
+<li><a class="reference internal" href="#git">Git</a></li>
+<li><a class="reference internal" href="#terminology-wtf">Terminology WTF?!</a></li>
+<li><a class="reference internal" href="#creating-repository">Creating Repository</a></li>
+<li><a class="reference internal" href="#untracked-files">Untracked Files</a></li>
+<li><a class="reference internal" href="#tracking-a-file">Tracking a File</a></li>
+<li><a class="reference internal" href="#first-check-in">First Check-In!</a></li>
+<li><a class="reference internal" href="#did-it-work">Did it Work?</a></li>
+<li><a class="reference internal" href="#keep-working">Keep Working</a></li>
+<li><a class="reference internal" href="#and-so-on">And So On</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#logs">Logs</a><ul>
+<li><a class="reference internal" href="#git-log">Git Log</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#reviewing-reverting">Reviewing &amp; Reverting</a><ul>
+<li><a class="reference internal" href="#argh">ARGH!</a></li>
+<li><a class="reference internal" href="#what-changed">What Changed?</a></li>
+<li><a class="reference internal" href="#just-take-me-back">Just Take Me Back</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#recap">Recap</a><ul>
+<li><a class="reference internal" href="#what-did-we-learn">What Did We Learn?</a></li>
+<li><a class="reference internal" href="#commands">Commands</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="#">Version Control with Git</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+          <div role="main" class="document">
+            
+  <div class="section" id="version-control-with-git">
+<h1>Version Control with Git<a class="headerlink" href="#version-control-with-git" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="version-control">
+<h2>Version Control<a class="headerlink" href="#version-control" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="what-is-version-control">
+<h3>What Is Version Control?<a class="headerlink" href="#what-is-version-control" title="Permalink to this headline">¶</a></h3>
+<p>Version control lets use manage software development safely:</p>
+<ul class="simple">
+<li>Track changes</li>
+<li>Look at older revisions</li>
+<li>Revert to early revision</li>
+<li>Share code/collaborate easily</li>
+<li class="fragment"><span>Save your bacon when you break something</span></li>
+</ul>
+<ul class="simple">
+<li>Homemade version control with filenames:<ul>
+<li><code class="docutils literal"><span class="pre">resume-version-1.docx</span></code></li>
+<li><code class="docutils literal"><span class="pre">resume-version-2.docx</span></code></li>
+<li><code class="docutils literal"><span class="pre">plan-update-20120122.docx</span></code></li>
+<li><code class="docutils literal"><span class="pre">plan-update-20121012.docx</span></code></li>
+</ul>
+</li>
+<li class="fragment"><span>Git is like this but a million times better</span></li>
+</ul>
+</div>
+<div class="section" id="multiple-files">
+<h3>Multiple Files<a class="headerlink" href="#multiple-files" title="Permalink to this headline">¶</a></h3>
+<p>Tracks entire project (could be many files in folders, even):</p>
+<pre class="console literal-block">
+$ <span class="cmd">ls</span>
+NOTES          app_setup.py      db_reset.py         search.py
+README         config.py         flask/              tests.db
+app/           db_create.py      requirements.txt    tests.py
+app.db         db_migrate.py     run.py              trials.py
+</pre>
+</div>
+</div>
+<div class="section" id="git-intro">
+<h2>Git Intro<a class="headerlink" href="#git-intro" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="git">
+<h3>Git<a class="headerlink" href="#git" title="Permalink to this headline">¶</a></h3>
+<div class="container">
+<ul class="simple">
+<li>Most popular Open Source version control program</li>
+<li>Runs on Linux, OSX, and Windows</li>
+<li>Main concern: safety!</li>
+</ul>
+</div>
+</div>
+<div class="section" id="terminology-wtf">
+<h3>Terminology WTF?!<a class="headerlink" href="#terminology-wtf" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt>Directory</dt>
+<dd>Folder of files (which can contain subdirectories)</dd>
+<dt>Repository</dt>
+<dd>Project kept under version control; can
+contain subdirectories</dd>
+<dt>Working Directory</dt>
+<dd><em>Your</em> particular copy of a repository</dd>
+</dl>
+<p>Until we turn a directory into a repository, git won&#8217;t work (and isn&#8217;t
+tracking anything):</p>
+<pre class="console literal-block">
+$ <span class="cmd">mkdir play</span>
+$ <span class="cmd">cd play</span>
+
+$ <span class="cmd">git status</span>
+fatal: Not a git repository (or any of the parent directories): .git
+</pre>
+</div>
+<div class="section" id="creating-repository">
+<h3>Creating Repository<a class="headerlink" href="#creating-repository" title="Permalink to this headline">¶</a></h3>
+<p>Turn your directory into a repository with <code class="docutils literal"><span class="pre">git</span> <span class="pre">init</span></code>.</p>
+<pre class="console literal-block">
+$ <span class="cmd">git init</span>
+Initialized empty Git repository in /tmp/play/.git/
+</pre>
+<p>You only need to do this once.</p>
+<p>You can do it when you create the project or at a later point.</p>
+<p>This creates a subdirectory called <code class="docutils literal"><span class="pre">.git</span></code> but, because this starts with a leading
+dot, Unix and OSX computers won&#8217;t list this directory for you. You can see all
+directories, including those that start with a leading dot, with <code class="docutils literal"><span class="pre">ls</span> <span class="pre">-a</span></code>.</p>
+<p>In larger projects, you might have your own subdirectories. The entire
+project&#8211;subdirectories and all&#8211;is one repository, and you only need to do
+<code class="docutils literal"><span class="pre">git</span> <span class="pre">init</span></code> once.</p>
+</div>
+<div class="section" id="untracked-files">
+<h3>Untracked Files<a class="headerlink" href="#untracked-files" title="Permalink to this headline">¶</a></h3>
+<p>Let&#8217;s create a file, <cite>hello.py</cite>, in our repository:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">print</span> <span class="s">&quot;Hello&quot;</span>
+</pre></div>
+</div>
+<p>Git can tell we&#8217;ve created this file but it also knows we haven&#8217;t told it
+to &#8220;track&#8221; it.</p>
+<pre class="console literal-block">
+$ <span class="cmd">git status</span>
+On branch master
+
+Initial commit
+
+Untracked files:
+  (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)
+
+        <span class="red">hello.py</span>
+
+nothing added to commit but untracked files present (use &quot;git add&quot;
+to track)
+</pre>
+</div>
+<div class="section" id="tracking-a-file">
+<h3>Tracking a File<a class="headerlink" href="#tracking-a-file" title="Permalink to this headline">¶</a></h3>
+<p>For Git to manage files, &#8220;track&#8221; them with <code class="docutils literal"><span class="pre">git</span> <span class="pre">add</span></code>:</p>
+<pre class="console literal-block">
+$ <span class="cmd">git add hello.py</span>
+</pre>
+<p>Once we do that, we can see that Git is tracking our file:</p>
+<pre class="console literal-block">
+$ <span class="cmd">git status</span>
+On branch master
+
+Initial commit
+
+Changes to be committed:
+  (use &quot;git rm --cached &lt;file&gt;...&quot; to unstage)
+
+        <span class="green">new file:   hello.py</span>
+</pre>
+</div>
+<div class="section" id="first-check-in">
+<h3>First Check-In!<a class="headerlink" href="#first-check-in" title="Permalink to this headline">¶</a></h3>
+<p>Our program is working! Let&#8217;s &#8220;commit&#8221; it:</p>
+<pre class="console literal-block">
+$ <span class="cmd">git commit -a -m &quot;Say hello&quot;</span>
+[master (root-commit) 6f267125] Say hello
+ 1 file changed, 1 insertion(+)
+ create mode 100644 hello.py
+</pre>
+<table class="docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">-a</span></kbd></td>
+<td>Commit all <em>tracked</em> files</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-m</span></kbd></td>
+<td>Check-in message (record of what you did)</td></tr>
+</tbody>
+</table>
+<p>Instead of using <code class="docutils literal"><span class="pre">-a</span></code>, you can specify individual files/directories to
+commit, like <code class="docutils literal"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span> <span class="pre">&quot;Message&quot;</span> <span class="pre">file1.py</span> <span class="pre">file2.py</span></code> &#8211; but this is less common,
+since you&#8217;ll typically want to check in the entire repository at a time.</p>
+<p>If you leave off the <code class="docutils literal"><span class="pre">-m</span></code>, Git will open up an editor for you to enter a commit
+message there.</p>
+<p>Here at the lab, it will open up &#8220;nano&#8221;, a small and simple Unix editor. To save your
+work, type <code class="docutils literal"><span class="pre">Control-X</span></code>, &#8220;Y&#8221; to confirm saving, and <code class="docutils literal"><span class="pre">Enter</span></code> to accept the filename.</p>
+<p>On many other computers, it will open up &#8220;Vim&#8221;, a powerful (and slightly cryptic)
+Unix editor. This may happen on your personal laptop or other machines you use in the
+future. If it opens up Vim and you don&#8217;t know how to use it, type <code class="docutils literal"><span class="pre">:q&lt;return&gt;</span></code>
+(colon, q, return) to quit. You can then re-type your commit command with the <code class="docutils literal"><span class="pre">-m</span></code> switch.</p>
+</div>
+<div class="section" id="did-it-work">
+<h3>Did it Work?<a class="headerlink" href="#did-it-work" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal"><span class="pre">git</span> <span class="pre">status</span></code> shows us the state of our repository:</p>
+<pre class="console literal-block">
+$ <span class="cmd">git status</span>
+On branch master
+nothing to commit, working directory clean
+</pre>
+<p><code class="docutils literal"><span class="pre">git</span> <span class="pre">log</span></code> shows us a log of our revision history:</p>
+<pre class="console literal-block">
+$ <span class="cmd">git log</span>
+commit <span class="tan">faa215bd9dd82ce8dca58f3ab3d0ece49d6fb351</span>
+Author: Jessica Developer &lt;<a class="reference external" href="mailto:jess&#37;&#52;&#48;gmail&#46;com">jess<span>&#64;</span>gmail<span>&#46;</span>com</a>&gt;
+Date:   Wed Sep 17 21:13:02 2014 -0700
+
+  Say hello
+</pre>
+</div>
+<div class="section" id="keep-working">
+<h3>Keep Working<a class="headerlink" href="#keep-working" title="Permalink to this headline">¶</a></h3>
+<p>Make a change to <cite>hello.py</cite>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">print</span> <span class="s">&quot;Hello&quot;</span>
+<span class="k">print</span> <span class="s">&quot;World&quot;</span>
+</pre></div>
+</div>
+<p>Git knows we&#8217;ve modified the file since we committed it:</p>
+<pre class="console literal-block">
+$ <span class="cmd">git status</span>
+On branch master
+Changes not staged for commit:
+  (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)
+  (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working
+  directory)
+
+        <span class="red">modified:   hello.py</span>
+
+no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)
+</pre>
+<p>Let&#8217;s check in our changed version:</p>
+<pre class="console literal-block">
+$ <span class="cmd">git commit -a -m &quot;Add world&quot;</span>
+[master 411455e8] Add world
+ 1 file changed, 1 insertion(+)
+</pre>
+</div>
+<div class="section" id="and-so-on">
+<h3>And So On<a class="headerlink" href="#and-so-on" title="Permalink to this headline">¶</a></h3>
+<p>Keep editing and committing every so often.</p>
+</div>
+</div>
+<div class="section" id="logs">
+<h2>Logs<a class="headerlink" href="#logs" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="git-log">
+<h3>Git Log<a class="headerlink" href="#git-log" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal"><span class="pre">git</span> <span class="pre">log</span></code> shows us all history, from most-recent to oldest:</p>
+<pre class="console literal-block">
+$ git log
+commit <span class="tan">d9808883c4432ee61c56a1df7d0c5330a5a2df7c</span>
+Author: Jessica Developer &lt;<a class="reference external" href="mailto:jess&#37;&#52;&#48;gmail&#46;com">jess<span>&#64;</span>gmail<span>&#46;</span>com</a>&gt;
+Date:   Wed Sep 17 21:17:18 2014 -0700
+
+    Add world
+
+commit <span class="tan">faa215bd9dd82ce8dca58f3ab3d0ece49d6fb351</span>
+Author: Jessica Developer &lt;<a class="reference external" href="mailto:jess&#37;&#52;&#48;gmail&#46;com">jess<span>&#64;</span>gmail<span>&#46;</span>com</a>&gt;
+Date:   Wed Sep 17 21:13:02 2014 -0700
+
+    Say hello
+</pre>
+<p>As your needs get more sophisticated, <code class="docutils literal"><span class="pre">git</span> <span class="pre">log</span></code> has many options, such as
+only showing recent history, work by one person, work on a single file or directory
+of your project, etc.</p>
+</div>
+</div>
+<div class="section" id="reviewing-reverting">
+<h2>Reviewing &amp; Reverting<a class="headerlink" href="#reviewing-reverting" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="argh">
+<h3>ARGH!<a class="headerlink" href="#argh" title="Permalink to this headline">¶</a></h3>
+<p>We&#8217;ve changed <cite>hello.py</cite>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">print</span> <span class="s">&quot;Hello&quot;</span>
+<span class="k">print</span> <span class="s">&quot;World&quot;</span>
+<span class="n">Yuck</span>
+</pre></div>
+</div>
+<p>And now we&#8217;ve broken our code:</p>
+<pre class="console literal-block">
+$ <span class="cmd">python hello.py</span>
+Hello
+World
+Traceback (most recent call last):
+  File &quot;hello.py&quot;, line 3, in &lt;module&gt;
+    Yuck
+NameError: name 'Yuck' is not defined
+</pre>
+</div>
+<div class="section" id="what-changed">
+<h3>What Changed?<a class="headerlink" href="#what-changed" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal"><span class="pre">git</span> <span class="pre">diff</span></code> can tell us what&#8217;s different:</p>
+<pre class="console literal-block">
+$ <span class="cmd">git diff</span>
+diff --git a/hello.py b/hello.py
+index 3808fc1..8ef9f2d 100644
+--- a/hello.py
++++ b/hello.py
+<span class="cyan">&#64;&#64; -1,2 +1,3 &#64;&#64;</span>
+ print &quot;Hello&quot;
+ print &quot;World&quot;
+<span class="green">+Yuck</span>
+</pre>
+<p>New lines in <span class="green">+green</span>, deleted lines in <span class="red">-red</span>.</p>
+</div>
+<div class="section" id="just-take-me-back">
+<h3>Just Take Me Back<a class="headerlink" href="#just-take-me-back" title="Permalink to this headline">¶</a></h3>
+<p>To return to our last revision, use <code class="docutils literal"><span class="pre">git</span> <span class="pre">reset</span></code>:</p>
+<pre class="console literal-block">
+$ <span class="cmd">git reset</span>
+Unstaged changes after reset:
+M     hello.py
+</pre>
+<p>... except it won&#8217;t; we&#8217;d lose change to <cite>hello.py</cite>.</p>
+<p><code class="docutils literal"><span class="pre">--hard</span></code> options means do this, even if we lose our change:</p>
+<pre class="console literal-block">
+$ <span class="cmd">git reset --hard</span>
+HEAD is now at 411455e8 Add world.
+</pre>
+<p>You can even go back to earlier versions with <code class="docutils literal"><span class="pre">git</span> <span class="pre">reset</span></code> by specifying an earlier
+revision ID or tag&#8211;but be warned, you&#8217;re <strong>losing</strong> history this way! This is useful
+only if you&#8217;re certain you never want the changes you made after a certain revision.</p>
+<p>To revert to an earlier revision:</p>
+<pre class="console literal-block">
+$ <span class="cmd">git reset --hard finished_exercise</span>
+</pre>
+<p>You can either provide a tag name or a revision ID to return to. <strong>Be careful.</strong></p>
+</div>
+</div>
+<div class="section" id="recap">
+<h2>Recap<a class="headerlink" href="#recap" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="what-did-we-learn">
+<h3>What Did We Learn?<a class="headerlink" href="#what-did-we-learn" title="Permalink to this headline">¶</a></h3>
+<div class="container">
+<ul class="simple">
+<li>Git tracks files in &#8220;repository&#8221;</li>
+<li>Must initialize with <code class="docutils literal"><span class="pre">git</span> <span class="pre">init</span></code> once</li>
+<li>Add files you want to track with <code class="docutils literal"><span class="pre">git</span> <span class="pre">add</span></code></li>
+<li>When things work or you&#8217;ve done a lot of work, commit<ul>
+<li>Don&#8217;t be a jerk to your future self!</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="container">
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">git</span> <span class="pre">status</span></code> shows status of working directory</li>
+<li><code class="docutils literal"><span class="pre">git</span> <span class="pre">log</span></code> shows what you&#8217;ve committed</li>
+<li><code class="docutils literal"><span class="pre">git</span> <span class="pre">diff</span></code> shows changes since you committed</li>
+<li>You can compare to/revert back to last revision</li>
+</ul>
+</div>
+</div>
+<div class="section" id="commands">
+<h3>Commands<a class="headerlink" href="#commands" title="Permalink to this headline">¶</a></h3>
+<p>You can try this out, from top to bottom, with these commands:</p>
+<div class="highlight-python"><div class="highlight"><pre># Make a directory and go into it
+cd /tmp
+mkdir play
+cd play
+
+# Turn into a git repository
+git init
+
+# Add a file with one line
+echo &#39;print &quot;Hello&quot;&#39; &gt; hello.py
+
+# See that git knows it&#39;s untracked
+git status
+
+# Tell git to track it
+git add hello.py
+
+# Commit our change and see that it&#39;s committed
+git commit -a -m &quot;Say hello&quot;
+git status
+git log
+
+# Add a second line to it
+echo &#39;print &quot;World&quot;&#39; &gt;&gt; hello.py
+
+# See that git knows it changed
+git status
+
+# Commit change and see that git tracked that
+git commit -a -m &quot;Add world&quot;
+git log
+
+# Add a third, bad line to our program; see that it breaks things
+echo &#39;Yuck&#39; &gt;&gt; hello.py
+python hello.py
+
+# What changed?
+git diff
+
+# Try to reset
+git reset
+
+# Add the &quot;--hard&quot; option to say it&#39;s ok to lose our &quot;Yuck&quot; line
+git reset --hard
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
