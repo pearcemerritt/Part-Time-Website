@@ -1,0 +1,342 @@
+
+
+
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <!--<title>Version Control with Git &mdash; Hackbright Intro to Programming</title>-->
+  <title>Version Control with Git</title>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+  <link rel="stylesheet" href="static/revealjs/css/reveal.css"/>
+  <link rel="stylesheet" href="static/revealjs/css/theme/white.css" id="theme"/>
+  <link rel="stylesheet" href="static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="static/hackbright.css"/>
+
+</head>
+<body>
+<div class="reveal">
+  <footer id="slide-footer">
+  </footer>
+
+  <div class="slides">
+    <section>
+      <h2>Version Control with Git</h2>
+      <div class="event"></div>
+    </section>
+
+    
+  <section id="version-control">
+<section>
+<h2>Version Control</h2>
+</section><section id="what-is-version-control">
+<h3>What Is Version Control?</h3>
+<ul class="simple">
+<li>Track changes</li>
+<li>Look at older revisions</li>
+<li>Revert to early revision</li>
+<li>Share code/collaborate easily</li>
+<li class="fragment"><span>Save your bacon when you break something</span></li>
+</ul>
+</section><section id="id1">
+<h3>What Is Version Control?</h3>
+<ul class="simple">
+<li>Homemade version control with filenames:<ul>
+<li><code class="docutils literal"><span class="pre">resume-version-1.docx</span></code></li>
+<li><code class="docutils literal"><span class="pre">resume-version-2.docx</span></code></li>
+<li><code class="docutils literal"><span class="pre">plan-update-20120122.docx</span></code></li>
+<li><code class="docutils literal"><span class="pre">plan-update-20121012.docx</span></code></li>
+</ul>
+</li>
+<li class="fragment"><span>Git is like this but a million times better</span></li>
+</ul>
+</section><section id="multiple-files">
+<h3>Multiple Files</h3>
+<p>Tracks entire project (could be many files in folders, even):</p>
+<pre class="console literal-block">
+$ <span class="cmd">ls</span>
+NOTES          app_setup.py      db_reset.py         search.py
+README         config.py         flask/              tests.db
+app/           db_create.py      requirements.txt    tests.py
+app.db         db_migrate.py     run.py              trials.py
+</pre>
+</section></section><section id="git-intro">
+<section>
+<h2>Git Intro</h2>
+</section><section id="git">
+<h3>Git</h3>
+<div class="container">
+<ul class="simple">
+<li class="fragment">Most popular Open Source version control program</li>
+<li class="fragment">Runs on Linux, OSX, and Windows</li>
+<li class="fragment">Main concern: safety!</li>
+</ul>
+</div>
+</section><section id="terminology-wtf">
+<h3>Terminology WTF?!</h3>
+<dl class="docutils">
+<dt>Directory</dt>
+<dd>Folder of files (which can contain subdirectories)</dd>
+<dt>Repository</dt>
+<dd>Project kept under version control; can
+contain subdirectories</dd>
+<dt>Working Directory</dt>
+<dd><em>Your</em> particular copy of a repository</dd>
+</dl>
+</section><section id="id2">
+<h3>Terminology WTF?!</h3>
+<p>Until we turn a directory into a repository, git won&#8217;t work (and isn&#8217;t
+tracking anything):</p>
+<pre class="console literal-block">
+$ <span class="cmd">mkdir play</span>
+$ <span class="cmd">cd play</span>
+
+$ <span class="cmd">git status</span>
+fatal: Not a git repository (or any of the parent directories): .git
+</pre>
+</section><section id="creating-repository">
+<h3>Creating Repository</h3>
+<p>Turn your directory into a repository with <code class="docutils literal"><span class="pre">git</span> <span class="pre">init</span></code>.</p>
+<pre class="console literal-block">
+$ <span class="cmd">git init</span>
+Initialized empty Git repository in /tmp/play/.git/
+</pre>
+<p>You only need to do this once.</p>
+<p>You can do it when you create the project or at a later point.</p>
+</section><section id="untracked-files">
+<h3>Untracked Files</h3>
+<p>Let&#8217;s create a file, <cite>hello.py</cite>, in our repository:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">print</span> <span class="s">&quot;Hello&quot;</span>
+</pre></div>
+</div>
+<p>Git can tell we&#8217;ve created this file but it also knows we haven&#8217;t told it
+to &#8220;track&#8221; it.</p>
+</section><section id="id3">
+<h3>Untracked Files</h3>
+<pre class="console literal-block">
+$ <span class="cmd">git status</span>
+On branch master
+
+Initial commit
+
+Untracked files:
+  (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)
+
+        <span class="red">hello.py</span>
+
+nothing added to commit but untracked files present (use &quot;git add&quot;
+to track)
+</pre>
+</section><section id="tracking-a-file">
+<h3>Tracking a File</h3>
+<p>For Git to manage files, &#8220;track&#8221; them with <code class="docutils literal"><span class="pre">git</span> <span class="pre">add</span></code>:</p>
+<pre class="console literal-block">
+$ <span class="cmd">git add hello.py</span>
+</pre>
+</section><section id="id4">
+<h3>Tracking a File</h3>
+<p>Once we do that, we can see that Git is tracking our file:</p>
+<pre class="console literal-block">
+$ <span class="cmd">git status</span>
+On branch master
+
+Initial commit
+
+Changes to be committed:
+  (use &quot;git rm --cached &lt;file&gt;...&quot; to unstage)
+
+        <span class="green">new file:   hello.py</span>
+</pre>
+</section><section id="first-check-in">
+<h3>First Check-In!</h3>
+<p>Our program is working! Let&#8217;s &#8220;commit&#8221; it:</p>
+<pre class="console literal-block">
+$ <span class="cmd">git commit -a -m &quot;Say hello&quot;</span>
+[master (root-commit) 6f267125] Say hello
+ 1 file changed, 1 insertion(+)
+ create mode 100644 hello.py
+</pre>
+<table class="docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">-a</span></kbd></td>
+<td>Commit all <em>tracked</em> files</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-m</span></kbd></td>
+<td>Check-in message (record of what you did)</td></tr>
+</tbody>
+</table>
+</section><section id="did-it-work">
+<h3>Did it Work?</h3>
+<p><code class="docutils literal"><span class="pre">git</span> <span class="pre">status</span></code> shows us the state of our repository:</p>
+<pre class="console literal-block">
+$ <span class="cmd">git status</span>
+On branch master
+nothing to commit, working directory clean
+</pre>
+</section><section id="id5">
+<h3>No, Really, Did It Work?</h3>
+<p><code class="docutils literal"><span class="pre">git</span> <span class="pre">log</span></code> shows us a log of our revision history:</p>
+<pre class="console literal-block">
+$ <span class="cmd">git log</span>
+commit <span class="tan">faa215bd9dd82ce8dca58f3ab3d0ece49d6fb351</span>
+Author: Jessica Developer &lt;<a class="reference external" href="mailto:jess&#37;&#52;&#48;gmail&#46;com">jess<span>&#64;</span>gmail<span>&#46;</span>com</a>&gt;
+Date:   Wed Sep 17 21:13:02 2014 -0700
+
+  Say hello
+</pre>
+</section><section id="keep-working">
+<h3>Keep Working</h3>
+<p>Make a change to <cite>hello.py</cite>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">print</span> <span class="s">&quot;Hello&quot;</span>
+<span class="k">print</span> <span class="s">&quot;World&quot;</span>
+</pre></div>
+</div>
+<p>Git knows we&#8217;ve modified the file since we committed it:</p>
+<pre class="console literal-block">
+$ <span class="cmd">git status</span>
+On branch master
+Changes not staged for commit:
+  (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)
+  (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working
+  directory)
+
+        <span class="red">modified:   hello.py</span>
+
+no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)
+</pre>
+</section><section id="id6">
+<h3>Keep Working</h3>
+<p>Let&#8217;s check in our changed version:</p>
+<pre class="console literal-block">
+$ <span class="cmd">git commit -a -m &quot;Add world&quot;</span>
+[master 411455e8] Add world
+ 1 file changed, 1 insertion(+)
+</pre>
+</section><section id="and-so-on">
+<h3>And So On</h3>
+<p>Keep editing and committing every so often.</p>
+</section></section><section id="logs">
+<section>
+<h2>Logs</h2>
+</section><section id="git-log">
+<h3>Git Log</h3>
+<p><code class="docutils literal"><span class="pre">git</span> <span class="pre">log</span></code> shows us all history, from most-recent to oldest:</p>
+<pre class="console literal-block">
+$ git log
+commit <span class="tan">d9808883c4432ee61c56a1df7d0c5330a5a2df7c</span>
+Author: Jessica Developer &lt;<a class="reference external" href="mailto:jess&#37;&#52;&#48;gmail&#46;com">jess<span>&#64;</span>gmail<span>&#46;</span>com</a>&gt;
+Date:   Wed Sep 17 21:17:18 2014 -0700
+
+    Add world
+
+commit <span class="tan">faa215bd9dd82ce8dca58f3ab3d0ece49d6fb351</span>
+Author: Jessica Developer &lt;<a class="reference external" href="mailto:jess&#37;&#52;&#48;gmail&#46;com">jess<span>&#64;</span>gmail<span>&#46;</span>com</a>&gt;
+Date:   Wed Sep 17 21:13:02 2014 -0700
+
+    Say hello
+</pre>
+</section></section><section id="reviewing-reverting">
+<section>
+<h2>Reviewing &amp; Reverting</h2>
+</section><section id="argh">
+<h3>ARGH!</h3>
+<p>We&#8217;ve changed <cite>hello.py</cite>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">print</span> <span class="s">&quot;Hello&quot;</span>
+<span class="k">print</span> <span class="s">&quot;World&quot;</span>
+<span class="n">Yuck</span>
+</pre></div>
+</div>
+<p>And now we&#8217;ve broken our code:</p>
+<pre class="console literal-block">
+$ <span class="cmd">python hello.py</span>
+Hello
+World
+Traceback (most recent call last):
+  File &quot;hello.py&quot;, line 3, in &lt;module&gt;
+    Yuck
+NameError: name 'Yuck' is not defined
+</pre>
+</section><section id="what-changed">
+<h3>What Changed?</h3>
+<p><code class="docutils literal"><span class="pre">git</span> <span class="pre">diff</span></code> can tell us what&#8217;s different:</p>
+<pre class="console literal-block">
+$ <span class="cmd">git diff</span>
+diff --git a/hello.py b/hello.py
+index 3808fc1..8ef9f2d 100644
+--- a/hello.py
++++ b/hello.py
+<span class="cyan">&#64;&#64; -1,2 +1,3 &#64;&#64;</span>
+ print &quot;Hello&quot;
+ print &quot;World&quot;
+<span class="green">+Yuck</span>
+</pre>
+<p>New lines in <span class="green">+green</span>, deleted lines in <span class="red">-red</span>.</p>
+</section><section id="just-take-me-back">
+<h3>Just Take Me Back</h3>
+<p>To return to our last revision, use <code class="docutils literal"><span class="pre">git</span> <span class="pre">reset</span></code>:</p>
+<pre class="console literal-block">
+$ <span class="cmd">git reset</span>
+Unstaged changes after reset:
+M     hello.py
+</pre>
+<p>... except it won&#8217;t; we&#8217;d lose change to <cite>hello.py</cite>.</p>
+<p><code class="docutils literal"><span class="pre">--hard</span></code> options means do this, even if we lose our change:</p>
+<pre class="console literal-block">
+$ <span class="cmd">git reset --hard</span>
+HEAD is now at 411455e8 Add world.
+</pre>
+</section></section><section id="recap">
+<section>
+<h2>Recap</h2>
+</section><section id="what-did-we-learn">
+<h3>What Did We Learn?</h3>
+<div class="container">
+<ul class="simple">
+<li class="fragment">Git tracks files in &#8220;repository&#8221;</li>
+<li class="fragment">Must initialize with <code class="docutils literal"><span class="pre">git</span> <span class="pre">init</span></code> once</li>
+<li class="fragment">Add files you want to track with <code class="docutils literal"><span class="pre">git</span> <span class="pre">add</span></code></li>
+<li class="fragment">When things work or you&#8217;ve done a lot of work, commit<ul>
+<li>Don&#8217;t be a jerk to your future self!</li>
+</ul>
+</li>
+</ul>
+</div>
+</section><section id="id7">
+<h3>What Did We Learn?</h3>
+<div class="container">
+<ul class="simple">
+<li class="fragment"><code class="docutils literal"><span class="pre">git</span> <span class="pre">status</span></code> shows status of working directory</li>
+<li class="fragment"><code class="docutils literal"><span class="pre">git</span> <span class="pre">log</span></code> shows what you&#8217;ve committed</li>
+<li class="fragment"><code class="docutils literal"><span class="pre">git</span> <span class="pre">diff</span></code> shows changes since you committed</li>
+<li class="fragment">You can compare to/revert back to last revision</li>
+</ul>
+</div>
+</section></section>
+
+
+  </div>
+</div>
+
+<script src="static/revealjs/lib/js/head.min.js"></script>
+<script src="static/revealjs/js/reveal.js"></script>
+<script>
+  Reveal.initialize({
+    maxScale: 5,
+    width: 1280,
+    height: 800,
+    dependencies: [
+          { src: "static/revealjs/plugin/zoom-js/zoom.js", async: true },
+          { src: "static/revealjs/plugin/notes/notes.js", async: true },
+    ]
+  });
+</script>
+
+</body>
+</html>
