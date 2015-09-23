@@ -10,7 +10,7 @@ What Is Version Control?
 
 .. only:: not revealjs
 
-  Version control lets use manage software development safely:
+  Version control lets us manage software development safely:
   
 - Track changes
 - Look at older revisions
